@@ -1,242 +1,300 @@
 {
   "title": "La Vida Moderna",
-  "sounds" : [
+  "sounds": [
     {
-      "text" : "La Vida Moderna Es" ,
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laVidaModernaEs.mp3"
+      "text": "La Vida Moderna Es...",
+      "description": "la vida moderna es",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laVidaModernaEs.ogg"
     },
     {
-      "text" : "Grito Cabrero" ,
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/gritoCabrero.mp3"
+      "text": "Grito Cabrero",
+      "description": "grito cabrero",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/gritoCabrero.ogg"
     },
     {
-      "text" : "¡¡¡UPyD!!!",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/upydNo.mp3"
+      "text": "¡UPyD!",
+      "description": "upyd",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/upydNo.ogg"
     },
     {
       "text": "El Rancius",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elRancius.mp3"
+      "description": "el rancius",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elRancius.ogg"
     },
     {
       "text": "What a time to be alive",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/whatATimeToBeAlive.mp3"
+      "description": "what a time to be alive",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/whatATimeToBeAlive.ogg"
     },
     {
       "text": "¿Y qué hay en Ifema?",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/yQueHayEnIfema.mp3"
+      "description": "que hay en ifema",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/yQueHayEnIfema.ogg"
     },
     {
       "text": "Parecía que sí",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/pareciaQueSi.mp3"
+      "description": "parecia que si",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/pareciaQueSi.ogg"
     },
     {
       "text": "Lo rural",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/loRural.mp3"
+      "description": "lo rural",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/loRural.ogg"
     },
     {
       "text": "El castellano",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elCastellano.mp3"
+      "description": "el castellano",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elCastellano.ogg"
     },
     {
       "text": "La reflexió",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laReflexio.mp3"
+      "description": "la reflexio",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laReflexio.ogg"
     },
     {
-      "text" : "La Review",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laReview.mp3"
+      "text": "La Review",
+      "description": "la review",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laReview.ogg"
     },
     {
       "text": "La indignació",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laIndignacio.mp3"
+      "description": "la indignacio la indignasio",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laIndignacio.ogg"
     },
     {
       "text": "La transformació",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laTransformasio.mp3"
+      "description": "la transformacio la transformasio",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laTransformasio.ogg"
     },
     {
       "text": "La promoció",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laPromosio.mp3"
+      "description": "la promocio la promosio",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laPromosio.ogg"
     },
     {
       "text": "La humillació",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laHumillasio.mp3"
+      "description": "La humillacio la humillasio",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laHumillasio.ogg"
     },
     {
-      "text" : "Ser moderno hoy",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/serModernoHoy.mp3"
+      "text": "Ser moderno hoy",
+      "description": "ser moderno hoy",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/serModernoHoy.ogg"
     },
     {
       "text": "A pijo sacao",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/aPijoSacao.mp3"
+      "description": "a pijo sacao",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/aPijoSacao.ogg"
     },
     {
       "text": "Nos han dado un CD por la calle",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/nosHanDadoUnCDPorLaCalle.mp3"
+      "description": "nos han dado un cd por la calle",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/nosHanDadoUnCDPorLaCalle.ogg"
     },
     {
       "text": "Mimimimi",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/mimimimi.mp3"
+      "description": "mimimimi",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/mimimimi.ogg"
     },
     {
-      "text" : "All Right",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/allRight.mp3"
+      "text": "All Right",
+      "description": "all right",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/allRight.ogg"
     },
     {
-      "text" : "¡¡¡Siii!!!",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/siii.mp3"
+      "text": "¡Si!",
+      "description": "siiiiiiiiiiiiiiiii",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/siii.ogg"
     },
     {
-      "text" : "Una lección de humildad",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/unaLeccionDeHumildad.mp3"
+      "text": "Una lección de humildad",
+      "description": "una leccion de humildad",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/unaLeccionDeHumildad.ogg"
     },
     {
-      "text" : "Choque de pre",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/choqueDePre.mp3"
+      "text": "Choque de pre",
+      "description": "choque de pre",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/choqueDePre.ogg"
     },
     {
-      "text" : "Fascismo del bueno",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/fascismoDelBueno.mp3"
+      "text": "Fascismo del bueno",
+      "description": "fascismo del bueno",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/fascismoDelBueno.ogg"
     },
     {
       "text": "Riki diki show",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/rikiDikiShow.mp3"
+      "description": "riki diki show",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/rikiDikiShow.ogg"
     },
     {
       "text": "Pídeselo a Quequé",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/pideseloAQueque.mp3"
+      "description": "pideselo a queque",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/pideseloAQueque.ogg"
     },
     {
-      "text": "Ay...Carlota",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/ayCarlota.mp3"
+      "text": "¡Ay! Carlota",
+      "description": "ay carlota",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/ayCarlota.ogg"
     },
     {
       "text": "Que venga un facha",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/queVengaUnFacha.mp3"
+      "description": "que venga un facha",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/queVengaUnFacha.ogg"
     },
     {
       "text": "¡Fuaaa!",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/fua.mp3"
+      "description": "fuaaa",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/fua.ogg"
     },
     {
       "text": "¡Pollito de Troya!",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/pollitoDeTroya.mp3"
+      "description": "pollito de troya",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/pollitoDeTroya.ogg"
     },
     {
       "text": "¡Vasito de agua!",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/vasitoDeAgua.mp3"
+      "description": "vasito de agua",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/vasitoDeAgua.ogg"
     },
     {
       "text": "Un perro",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/unPerro.mp3"
+      "description": "un perro",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/unPerro.ogg"
     },
     {
       "text": "La ermita",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laHermita.mp3"
+      "description": "la ermita",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laHermita.ogg"
     },
     {
       "text": "¡Conseguido!",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/conseguido.mp3"
+      "description": "conseguido",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/conseguido.ogg"
     },
     {
       "text": "El cable",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elCable.mp3"
+      "description": "el cable",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elCable.ogg"
     },
     {
       "text": "Nos han traído una cosa",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/nosHanTraidoUnaCosa.mp3"
+      "description": "nos han traido una cosa",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/nosHanTraidoUnaCosa.ogg"
     },
     {
       "text": "¡Padre!",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/padre.mp3"
-    }
-    ,
+      "description": "padre",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/padre.ogg"
+    },
     {
       "text": "El cuenco ese con flores secas",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elcuencoesedelasfloressecas.mp3"
+      "description": "el cuenco ese con flores secas",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elcuencoesedelasfloressecas.ogg"
     },
     {
       "text": "El secretito",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elSecretito.mp3"
+      "description": "el secretito",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elSecretito.ogg"
     },
     {
       "text": "Gente que se flipa",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/genteQueSeFlipa.mp3"
+      "description": "gente que se flipa",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/genteQueSeFlipa.ogg"
     },
     {
       "text": "La coMMedia",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laCommedia.mp3"
+      "description": "la commedia la comedia",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laCommedia.ogg"
     },
     {
       "text": "Los gilipollitas",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/losGilipollitas.mp3"
+      "description": "los gilipollitas",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/losGilipollitas.ogg"
     },
     {
       "text": "Nos hemos traído una cosa",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/nosHemosTraidoUnaCosa.mp3"
+      "description": "nos hemos traido una cosa",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/nosHemosTraidoUnaCosa.ogg"
     },
     {
       "text": "Salamanca 1977",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/salamanca1977.mp3"
+      "description": "salamanca 1977 queque",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/salamanca1977.ogg"
     },
     {
       "text": "Granadilla de Abona 1973",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/granadillaDeAbona1973.mp3"
+      "description": "granadilla de abona 1973 ignatius",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/granadillaDeAbona1973.ogg"
     },
     {
       "text": "Sacudir la alfrombra",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/sacudirLaAlfrombra.mp3"
+      "description": "sacudir la alfrombra",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/sacudirLaAlfrombra.ogg"
     },
     {
       "text": "El cancaneo",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elCancaneo.mp3"
+      "description": "el cancaneo",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elCancaneo.ogg"
     },
     {
       "text": "Recogiendo cable",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/recogiendoCable.mp3"
+      "description": "recogiendo cable",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/recogiendoCable.ogg"
     },
     {
       "text": "El Moonwalk",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elMoonwalk.mp3"
+      "description": "el moonwalk",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elMoonwalk.ogg"
     },
     {
       "text": "El volantazo",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elVolantazo.mp3"
+      "description": "el volantazo",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elVolantazo.ogg"
     },
     {
       "text": "Tirando de freno de mano",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/tirandoDeFrenoDeMano.mp3"
+      "description": "tirando de freno de mano",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/tirandoDeFrenoDeMano.ogg"
     },
     {
       "text": "La palanca de emergencia",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laPalancaDeEmergencia.mp3"
+      "description": "la palanca de emergencia",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laPalancaDeEmergencia.ogg"
     },
     {
       "text": "Derrapando en primera",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/derrapandoEnPrimera.mp3"
+      "description": "derrapando en primera",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/derrapandoEnPrimera.ogg"
     },
     {
       "text": "El cangrejito",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elCangrejito.mp3"
+      "description": "el cangrejito",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elCangrejito.ogg"
     },
     {
       "text": "El retroces",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elRetroces.mp3"
+      "description": "el retroces",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elRetroces.ogg"
     },
     {
       "text": "España",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/espanya.mp3"
+      "description": "españa",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/espanya.ogg"
     },
     {
       "text": "Ipno Moderdonia",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/ipno.mp3"
+      "description": "himno ipno moderdonia",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/ipno.ogg"
     },
     {
       "text": "Zorrooo",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/zorro.mp3"
+      "description": "zorro",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/zorro.ogg"
     },
     {
-      "text": "Cóóómmmoo !?!?",
-      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/coommo.mp3"
+      "text": "¿¡ Cómmo !?",
+      "description": "como commo",
+      "soundURL": "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/coommo.ogg"
     }
   ]
 }

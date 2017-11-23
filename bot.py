@@ -10,10 +10,12 @@ import argparse
 import logging
 import logger
 import json
+import unidecode
 
 LOG = logging.getLogger('LaVidaModerna_Bot')
 DATA_JSON = "data.json"
 
+MAX_RESULTS = 48
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-v", "--verbosity", help="Defines log verbosity", choices=['CRITICAL', 'ERROR', 'WARN', 'INFO', 'DEBUG'], default='INFO')
@@ -43,8 +45,6 @@ def send_welcome(message):
     cid = message.chat.id
     bot.send_message(cid,
                      "Este bot es inline. Teclea su nombre en una conversación/grupo y podras enviar un mensaje moderno.")
-    #bot.send_message(cid,
-    #                 "Creado por @elraro . Puedes mejorarme en la siguiente dirección: https://github.com/elraro/rajoyBot")
 
 @bot.inline_handler(lambda query: query.query == '')
 def query_empty(inline_query):
@@ -52,7 +52,7 @@ def query_empty(inline_query):
     r = []
     for i, sound in enumerate(sounds):
         r.append(types.InlineQueryResultVoice(str(i), sound["soundURL"], sound["text"]))
-        if i > 48: # https://core.telegram.org/bots/api#answerinlinequery
+        if i > MAX_RESULTS: # https://core.telegram.org/bots/api#answerinlinequery
             break
     bot.answer_inline_query(inline_query.id, r)
 
@@ -60,16 +60,17 @@ def query_empty(inline_query):
 def query_text(inline_query):
     LOG.debug(inline_query)
     try:
-        text = inline_query.query.translate(remove).lower()
+        text = unidecode.unidecode(inline_query.query.translate(remove).lower())
+        LOG.debug("Querying: "+text)
         r = []
         for i, sound in enumerate(sounds):
-            if text in sound["text"].lower(): # <-- temporary cpu hungry fix
+            if text in sound["description"]:
                 r.append(types.InlineQueryResultVoice(str(i), sound["soundURL"], sound["text"]))
-            if len(r) > 48:
+            if len(r) > MAX_RESULTS:
                 break
         bot.answer_inline_query(inline_query.id, r)
     except Exception as e:
-        LOG.error(str(e),e)
+        LOG.error("Query aborted"+e,e)
 
 
 
