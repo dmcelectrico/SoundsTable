@@ -51,7 +51,7 @@ def query_empty(inline_query):
     LOG.debug(inline_query)
     r = []
     for i, sound in enumerate(sounds):
-        r.append(types.InlineQueryResultVoice(str(i), sound["soundURL"], sound["text"]))
+        r.append(types.InlineQueryResultVoice(str(i), sound["soundURL"], sound["text"], caption=sound["text"]))
         if i > MAX_RESULTS: # https://core.telegram.org/bots/api#answerinlinequery
             break
     bot.answer_inline_query(inline_query.id, r)
@@ -65,7 +65,7 @@ def query_text(inline_query):
         r = []
         for i, sound in enumerate(sounds):
             if text in sound["description"]:
-                r.append(types.InlineQueryResultVoice(str(i), sound["soundURL"], sound["text"]))
+                r.append(types.InlineQueryResultVoice(str(i), sound["soundURL"], sound["text"], caption=sound["text"]))
             if len(r) > MAX_RESULTS:
                 break
         bot.answer_inline_query(inline_query.id, r)
