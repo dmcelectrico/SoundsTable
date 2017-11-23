@@ -9,16 +9,16 @@ import telebot.types as types
 import argparse
 import logging
 import logger
+import json
 
 LOG = logging.getLogger('LaVidaModerna_Bot')
+DATA_JSON = "data.json"
+
 
 parser = argparse.ArgumentParser()
-
 parser.add_argument("-v", "--verbosity", help="Defines log verbosity", choices=['CRITICAL', 'ERROR', 'WARN', 'INFO', 'DEBUG'], default='INFO')
 parser.add_argument("-b", "--bucket", help="Bucket or url where audios are stored", default='https://github.com/dmcelectrico/SoundsTable/raw/master/LaVidaModerna/')
 parser.add_argument("TELEGRAM_API_TOKEN", type=str, help="Telegram API token given by @botfather.")
-
-
 args = parser.parse_args()
 
 numeric_level = getattr(logging, args.verbosity.upper(), None)
@@ -29,10 +29,12 @@ for logger in LOG.handlers:
 
 LOG.info("Starting up bot...")
 
+b_data_json=open(DATA_JSON).read()
+data_json = json.loads(b_data_json)
+
 bot = telebot.TeleBot(args.TELEGRAM_API_TOKEN)
 remove = string.punctuation + string.whitespace
-sounds = [[args.bucket+"aPijoSacao.mp3", "A pijo sacao",
-           "A pijo sacao"]]
+sounds = data_json["sounds"]
 
 
 @bot.message_handler(commands=['start'])
@@ -49,7 +51,9 @@ def query_empty(inline_query):
     LOG.debug(inline_query)
     r = []
     for i, sound in enumerate(sounds):
-        r.append(types.InlineQueryResultVoice(str(i), sound[0], sound[1], voice_duration=7))
+        r.append(types.InlineQueryResultVoice(str(i), sound["soundURL"], sound["text"], voice_duration=7))
+        if i > 48: # https://core.telegram.org/bots/api#answerinlinequery
+            break
     bot.answer_inline_query(inline_query.id, r)
 
 @bot.inline_handler(lambda query: query.query)
@@ -59,8 +63,10 @@ def query_text(inline_query):
         text = inline_query.query.translate(remove).lower()
         r = []
         for i, sound in enumerate(sounds):
-            if text in sound[2]:
-                r.append(types.InlineQueryResultVoice(str(i), sound[0], sound[1], voice_duration=7))
+            if text in sound["text"]:
+                r.append(types.InlineQueryResultVoice(str(i), sound["soundURL"], sound["text"], voice_duration=7))
+            if(len(r) > 48):
+                break
         bot.answer_inline_query(inline_query.id, r)
     except Exception as e:
         LOG.error(str(e),e)
