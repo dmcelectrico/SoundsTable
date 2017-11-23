@@ -51,7 +51,7 @@ def query_empty(inline_query):
     LOG.debug(inline_query)
     r = []
     for i, sound in enumerate(sounds):
-        r.append(types.InlineQueryResultVoice(str(i), sound["soundURL"], sound["text"], voice_duration=7))
+        r.append(types.InlineQueryResultVoice(str(i), sound["soundURL"], sound["text"]))
         if i > 48: # https://core.telegram.org/bots/api#answerinlinequery
             break
     bot.answer_inline_query(inline_query.id, r)
@@ -64,8 +64,8 @@ def query_text(inline_query):
         r = []
         for i, sound in enumerate(sounds):
             if text in sound["text"].lower(): # <-- temporary cpu hungry fix
-                r.append(types.InlineQueryResultVoice(str(i), sound["soundURL"], sound["text"], voice_duration=7))
-            if(len(r) > 48):
+                r.append(types.InlineQueryResultVoice(str(i), sound["soundURL"], sound["text"]))
+            if len(r) > 48:
                 break
         bot.answer_inline_query(inline_query.id, r)
     except Exception as e:

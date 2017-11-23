@@ -3,240 +3,240 @@
   "sounds" : [
     {
       "text" : "La Vida Moderna Es" ,
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/laVidaModernaEs.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laVidaModernaEs.mp3"
     },
     {
       "text" : "Grito Cabrero" ,
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/gritoCabrero.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/gritoCabrero.mp3"
     },
     {
       "text" : "¡¡¡UPyD!!!",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/upydNo.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/upydNo.mp3"
     },
     {
       "text": "El Rancius",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/elRancius.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elRancius.mp3"
     },
     {
       "text": "What a time to be alive",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/whatATimeToBeAlive.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/whatATimeToBeAlive.mp3"
     },
     {
       "text": "¿Y qué hay en Ifema?",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/yQueHayEnIfema.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/yQueHayEnIfema.mp3"
     },
     {
       "text": "Parecía que sí",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/pareciaQueSi.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/pareciaQueSi.mp3"
     },
     {
       "text": "Lo rural",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/loRural.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/loRural.mp3"
     },
     {
       "text": "El castellano",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/elCastellano.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elCastellano.mp3"
     },
     {
       "text": "La reflexió",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/laReflexio.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laReflexio.mp3"
     },
     {
       "text" : "La Review",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/laReview.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laReview.mp3"
     },
     {
       "text": "La indignació",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/laIndignacio.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laIndignacio.mp3"
     },
     {
       "text": "La transformació",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/laTransformasio.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laTransformasio.mp3"
     },
     {
       "text": "La promoció",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/laPromosio.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laPromosio.mp3"
     },
     {
       "text": "La humillació",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/laHumillasio.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laHumillasio.mp3"
     },
     {
       "text" : "Ser moderno hoy",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/serModernoHoy.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/serModernoHoy.mp3"
     },
     {
       "text": "A pijo sacao",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/aPijoSacao.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/aPijoSacao.mp3"
     },
     {
       "text": "Nos han dado un CD por la calle",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/nosHanDadoUnCDPorLaCalle.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/nosHanDadoUnCDPorLaCalle.mp3"
     },
     {
       "text": "Mimimimi",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/mimimimi.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/mimimimi.mp3"
     },
     {
       "text" : "All Right",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/allRight.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/allRight.mp3"
     },
     {
       "text" : "¡¡¡Siii!!!",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/siii.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/siii.mp3"
     },
     {
       "text" : "Una lección de humildad",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/unaLeccionDeHumildad.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/unaLeccionDeHumildad.mp3"
     },
     {
       "text" : "Choque de pre",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/choqueDePre.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/choqueDePre.mp3"
     },
     {
       "text" : "Fascismo del bueno",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/fascismoDelBueno.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/fascismoDelBueno.mp3"
     },
     {
       "text": "Riki diki show",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/rikiDikiShow.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/rikiDikiShow.mp3"
     },
     {
       "text": "Pídeselo a Quequé",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/pideseloAQueque.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/pideseloAQueque.mp3"
     },
     {
       "text": "Ay...Carlota",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/ayCarlota.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/ayCarlota.mp3"
     },
     {
       "text": "Que venga un facha",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/queVengaUnFacha.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/queVengaUnFacha.mp3"
     },
     {
       "text": "¡Fuaaa!",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/fua.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/fua.mp3"
     },
     {
       "text": "¡Pollito de Troya!",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/pollitoDeTroya.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/pollitoDeTroya.mp3"
     },
     {
       "text": "¡Vasito de agua!",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/vasitoDeAgua.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/vasitoDeAgua.mp3"
     },
     {
       "text": "Un perro",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/unPerro.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/unPerro.mp3"
     },
     {
       "text": "La ermita",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/laHermita.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laHermita.mp3"
     },
     {
       "text": "¡Conseguido!",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/conseguido.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/conseguido.mp3"
     },
     {
       "text": "El cable",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/elCable.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elCable.mp3"
     },
     {
       "text": "Nos han traído una cosa",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/nosHanTraidoUnaCosa.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/nosHanTraidoUnaCosa.mp3"
     },
     {
       "text": "¡Padre!",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/padre.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/padre.mp3"
     }
     ,
     {
       "text": "El cuenco ese con flores secas",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/elcuencoesedelasfloressecas.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elcuencoesedelasfloressecas.mp3"
     },
     {
       "text": "El secretito",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/elSecretito.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elSecretito.mp3"
     },
     {
       "text": "Gente que se flipa",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/genteQueSeFlipa.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/genteQueSeFlipa.mp3"
     },
     {
       "text": "La coMMedia",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/laCommedia.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laCommedia.mp3"
     },
     {
       "text": "Los gilipollitas",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/losGilipollitas.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/losGilipollitas.mp3"
     },
     {
       "text": "Nos hemos traído una cosa",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/nosHemosTraidoUnaCosa.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/nosHemosTraidoUnaCosa.mp3"
     },
     {
       "text": "Salamanca 1977",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/salamanca1977.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/salamanca1977.mp3"
     },
     {
       "text": "Granadilla de Abona 1973",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/granadillaDeAbona1973.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/granadillaDeAbona1973.mp3"
     },
     {
       "text": "Sacudir la alfrombra",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/sacudirLaAlfrombra.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/sacudirLaAlfrombra.mp3"
     },
     {
       "text": "El cancaneo",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/elCancaneo.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elCancaneo.mp3"
     },
     {
       "text": "Recogiendo cable",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/recogiendoCable.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/recogiendoCable.mp3"
     },
     {
       "text": "El Moonwalk",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/elMoonwalk.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elMoonwalk.mp3"
     },
     {
       "text": "El volantazo",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/elVolantazo.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elVolantazo.mp3"
     },
     {
       "text": "Tirando de freno de mano",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/tirandoDeFrenoDeMano.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/tirandoDeFrenoDeMano.mp3"
     },
     {
       "text": "La palanca de emergencia",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/laPalancaDeEmergencia.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/laPalancaDeEmergencia.mp3"
     },
     {
       "text": "Derrapando en primera",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/derrapandoEnPrimera.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/derrapandoEnPrimera.mp3"
     },
     {
       "text": "El cangrejito",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/elCangrejito.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elCangrejito.mp3"
     },
     {
       "text": "El retroces",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/elRetroces.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/elRetroces.mp3"
     },
     {
       "text": "España",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/espanya.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/espanya.mp3"
     },
     {
       "text": "Ipno Moderdonia",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/ipno.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/ipno.mp3"
     },
     {
       "text": "Zorrooo",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/zorro.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/zorro.mp3"
     },
     {
       "text": "Cóóómmmoo !?!?",
-      "soundURL" : "https://raw.githubusercontent.com/Xatpy/SoundsTable/master/LaVidaModerna/coommo.mp3"
+      "soundURL" : "https://cdn.rawgit.com/dmcelectrico/SoundsTable/ecaf3e24/LaVidaModerna/coommo.mp3"
     }
   ]
 }
