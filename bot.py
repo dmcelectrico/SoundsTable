@@ -63,7 +63,7 @@ def query_text(inline_query):
         text = inline_query.query.translate(remove).lower()
         r = []
         for i, sound in enumerate(sounds):
-            if text in sound["text"]:
+            if text in sound["text"].lower(): # <-- temporary cpu hungry fix
                 r.append(types.InlineQueryResultVoice(str(i), sound["soundURL"], sound["text"], voice_duration=7))
             if(len(r) > 48):
                 break
