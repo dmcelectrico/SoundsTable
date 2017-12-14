@@ -228,57 +228,57 @@
     },
     {
       "text": "Sacudir la alfrombra",
-      "description": "sacudir la alfrombra",
+      "description": "sacudir la alfrombra julio",
       "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/sacudirLaAlfrombra.ogg"
     },
     {
       "text": "El cancaneo",
-      "description": "el cancaneo",
+      "description": "el cancaneo julio",
       "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/elCancaneo.ogg"
     },
     {
       "text": "Recogiendo cable",
-      "description": "recogiendo cable",
+      "description": "recogiendo cable julio",
       "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/recogiendoCable.ogg"
     },
     {
       "text": "El Moonwalk",
-      "description": "el moonwalk",
+      "description": "el moonwalk julio",
       "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/elMoonwalk.ogg"
     },
     {
       "text": "El volantazo",
-      "description": "el volantazo",
+      "description": "el volantazo julio",
       "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/elVolantazo.ogg"
     },
     {
       "text": "Tirando de freno de mano",
-      "description": "tirando de freno de mano",
+      "description": "tirando de freno de mano julio",
       "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/tirandoDeFrenoDeMano.ogg"
     },
     {
       "text": "La palanca de emergencia",
-      "description": "la palanca de emergencia",
+      "description": "la palanca de emergencia julio",
       "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/laPalancaDeEmergencia.ogg"
     },
     {
       "text": "Derrapando en primera",
-      "description": "derrapando en primera",
+      "description": "derrapando en primera julio",
       "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/derrapandoEnPrimera.ogg"
     },
     {
       "text": "El cangrejito",
-      "description": "el cangrejito",
+      "description": "el cangrejito julio",
       "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/elCangrejito.ogg"
     },
     {
       "text": "El retroces",
-      "description": "el retroces",
+      "description": "el retroces julio",
       "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/elRetroces.ogg"
     },
     {
       "text": "España",
-      "description": "espana",
+      "description": "espana julio",
       "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/espanya.ogg"
     },
     {
@@ -288,13 +288,18 @@
     },
     {
       "text": "Zorrooo",
-      "description": "zorro",
+      "description": "zorro julio alex pinacho",
       "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/zorro.ogg"
     },
     {
       "text": "¿¡ Cómmo !?",
       "description": "como commo",
       "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/coommo.ogg"
+    },
+    {
+      "text": "Está feo",
+      "description": "esta feo julio",
+      "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/estafeo.ogg"
     }
   ]
 }
