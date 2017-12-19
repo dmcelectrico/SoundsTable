@@ -300,6 +300,12 @@
       "text": "Está feo",
       "description": "esta feo julio",
       "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/estafeo.ogg"
+    },
+    {
+      "text": "Zorraaa",
+      "description": "zorra patriarcado julio",
+      "soundURL": "https://raw.githubusercontent.com/dmcelectrico/SoundsTable/master/LaVidaModerna/zorra.ogg"
     }
+
   ]
 }
