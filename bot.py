@@ -42,7 +42,9 @@ sounds = data_json["sounds"]
 # Build sound URLs based in the bucket and unique IDs for the responses
 for sound in sounds:
     sound["filename"] = args.bucket + sound["filename"]
-    sound["id"] = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+    if id not in sound:
+        sound["id"] = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+        LOG.debug("Generated ID for %s: %s",sound["filename"],sound["id"])
 
 bot = telebot.TeleBot(args.TELEGRAM_API_TOKEN)
 
