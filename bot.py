@@ -79,7 +79,7 @@ def query_text(inline_query):
                     sound["id"], sound["filename"], sound["text"], caption=sound["text"]))
             if len(r) > TELEGRAM_INLINE_MAX_RESULTS:
                 break
-        bot.answer_inline_query(inline_query.id, r)
+        bot.answer_inline_query(inline_query.id, r, cache_time=5)
     except Exception as e:
         LOG.error("Query aborted" + e, e)
 
