@@ -1,19 +1,14 @@
 import telebot
 import requests
-import sys
-import time
 import string
-import logger
-from os import environ
 import telebot.types as types
 import argparse
-import logging
 import logger
 import json
 import unidecode
 import random
 
-LOG = logging.getLogger('LaVidaModerna_Bot')
+LOG = logger.getLogger('LaVidaModerna_Bot')
 DATA_JSON = 'LaVidaModerna/data.json'
 
 TELEGRAM_INLINE_MAX_RESULTS = 48
@@ -26,11 +21,7 @@ parser.add_argument("-b", "--bucket", help="Bucket or url where audios are store
 parser.add_argument("TELEGRAM_API_TOKEN", type=str, help="Telegram API token given by @botfather.")
 args = parser.parse_args()
 
-numeric_level = getattr(logging, args.verbosity.upper(), None)
-if not isinstance(numeric_level, int):
-    raise ValueError('Invalid log level: %s' % args.verbosity)
-for logger in LOG.handlers:
-    logger.setLevel(numeric_level)
+logger.setLogLevel(args.verbosity)
 
 LOG.info('Starting up bot...')
 
