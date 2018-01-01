@@ -15,6 +15,7 @@ class SqLite:
         # Connecting to the database file
         self.connection = sqlite3.connect(self.sqlite_file)
         self.cursor = self.connection.cursor()
+        self.startup()
 
     def startup(self):
         tables = self.get_tables()
