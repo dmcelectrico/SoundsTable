@@ -145,6 +145,7 @@ class SqLite:
         """
         pass
 
+
 def map_to_sounds(result_set):
     sounds = []
     for row in result_set:
