@@ -91,6 +91,58 @@ class SqLite:
                                     txt=col_text, txtft=default_column_type,
                                     tags=col_tags, tagsft=default_column_type))
 
+    def create_table_users(self):
+        """ TODO: User info table.
+        Example user query:
+        {
+            'id': '789066751082661', 'from_user':
+            {
+                'id': 183718,
+                'is_bot': False,
+                'first_name': 'Mr. Moonhaze',
+                'username': 'MrMoonhaze',
+                'last_name': None,
+                'language_code': 'en-US'
+            },
+            'location': None,
+            'query': 'zorro',
+            'offset': ''
+        }
+
+        Data to store:
+         - user id INTEGER
+         - is_bot BOOLEAN
+         - first_name STRING
+         - last_name STRING
+         - username STRING
+         - language_code STRING
+         - num_queries INTEGER
+         - num_results INTEGER
+        """
+        pass
+
+    def create_table_query_history(self):
+        """ TODO: User interaction activity history
+        Data to store:
+         - index PK INTEGER
+         - user_id FK
+         - from_group? Can I get this? BOOLEAN
+         - timestamp TIMESTAMP
+         - query text STRING
+         - results INTEGER
+        """
+        pass
+
+    def create_table_result_history(self):
+        """ TODO: Sound result sent history
+        Data to store:
+         - index PK INTEGER
+         - user_id FK
+         - sound_id FK
+         - to group? Can I get this? BOOLEAN
+         - timestamp TIMESTAMP
+        """
+        pass
 
 def map_to_sounds(result_set):
     sounds = []
