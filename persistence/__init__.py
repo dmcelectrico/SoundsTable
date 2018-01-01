@@ -31,12 +31,18 @@ class SqLite:
         sounds = map_to_sounds(result_set)
         return sounds
 
+    def get_sound(self, id):
+        sql = 'SELECT * FROM {tn} WHERE id = {id};'
+        self.cursor.execute(sql.format(tb=TABLE_SOUNDS, id=id))
+        result_set = self.cursor.fetchall()
+        sounds = map_to_sounds(result_set)
+        return sounds
+
     def add_sound(self, id, filename, text, tags):
         LOG.info('Adding sound: %s %s', id, filename)
         self.cursor.execute('INSERT INTO {tn} VALUES ({id}, "{filename}", "{text}", "{tags}")' \
               .format(tn=TABLE_SOUNDS, id=id, filename=filename, text=text, tags=tags))
         self.commit()
-
 
     def delete_sound(self, id):
         LOG.info('Deleting sound %s', id)
