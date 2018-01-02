@@ -21,6 +21,7 @@ parser.add_argument("-v", "--verbosity", help="Defines log verbosity",
                     choices=['CRITICAL', 'ERROR', 'WARN', 'INFO', 'DEBUG'], default='INFO')
 parser.add_argument("-b", "--bucket", help="Bucket or url where audios are stored",
                     default='https://github.com/dmcelectrico/SoundsTable/raw/master/LaVidaModerna/')
+parser.add_argument("--database", help="Database file location")
 parser.add_argument("TELEGRAM_API_TOKEN", type=str, help="Telegram API token given by @botfather.")
 args = parser.parse_args()
 
@@ -28,7 +29,7 @@ BUCKET = args.bucket
 logger.setLogLevel(args.verbosity)
 
 LOG.info('Starting up bot...')
-database = persistence.SqLite()
+database = persistence.SqLite(db_file=args.database)
 # Build sound URLs based in the bucket and unique IDs for the responses
 # for sound in sounds:
 #    sound["filename"] = args.bucket + sound["filename"]

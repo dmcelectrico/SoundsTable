@@ -9,6 +9,8 @@ TABLE_SOUNDS = 'sounds'  # name of the table to be created
 class SqLite:
 
     def __init__(self, db_file='db.sqlite'):
+        if not db_file:
+            db_file = 'db.sqlite'
         LOG.debug('Persistence layer started: sqlite3')
         self.sqlite_file = db_file  # name of the sqlite database file
 
