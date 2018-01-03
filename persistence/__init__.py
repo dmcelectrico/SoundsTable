@@ -8,7 +8,7 @@ TABLE_SOUNDS = 'sounds'  # name of the table to be created
 
 class SqLite:
 
-    def __init__(self, db_file='db.sqlite'):
+    def __init__(self, db_file):
         if not db_file:
             db_file = 'db.sqlite'
         LOG.debug('Persistence layer started: sqlite3')
@@ -43,7 +43,7 @@ class SqLite:
 
     def add_sound(self, id, filename, text, tags):
         LOG.info('Adding sound: %s %s', id, filename)
-        self.cursor.execute('INSERT INTO {tn} VALUES ({id}, "{filename}", "{text}", "{tags}")' \
+        self.cursor.execute('INSERT INTO {tn} VALUES ({id}, "{filename}", "{text}", "{tags}")'
               .format(tn=TABLE_SOUNDS, id=id, filename=filename, text=text, tags=tags))
         self.commit()
 

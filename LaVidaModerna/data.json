@@ -2,376 +2,376 @@
   "title": "La Vida Moderna",
   "sounds": [
     {
-      "id": "1708277",
-      "filename": "recogiendoCable.ogg",
-      "text": "Recogiendo cable",
-      "tags": "recogiendo cable julio"
-    },
-    {
-      "id": "3399364",
-      "filename": "genteQueSeFlipa.ogg",
-      "text": "Gente que se flipa",
-      "tags": "gente que se flipa"
-    },
-    {
-      "id": "4748077",
-      "filename": "loRural.ogg",
-      "text": "Lo rural",
-      "tags": "lo rural"
-    },
-    {
-      "id": "5749316",
-      "filename": "laHumillasio.ogg",
-      "text": "La humillació",
-      "tags": "La humillacio la humillasio"
-    },
-    {
-      "id": "6680539",
-      "filename": "nosHanTraidoUnaCosa.ogg",
-      "text": "Nos han traído una cosa",
-      "tags": "nos han traido una cosa"
-    },
-    {
-      "id": "7009537",
-      "filename": "elCangrejito.ogg",
-      "text": "El cangrejito",
-      "tags": "el cangrejito julio"
-    },
-    {
-      "id": "8714075",
-      "filename": "espanya.ogg",
-      "text": "España",
-      "tags": "espana julio"
-    },
-    {
-      "id": "10271795",
-      "filename": "elRancius.ogg",
-      "text": "El Rancius",
-      "tags": "el rancius"
-    },
-    {
-      "id": "11600122",
-      "filename": "losGilipollitas.ogg",
-      "text": "Los gilipollitas",
-      "tags": "los gilipollitas"
-    },
-    {
-      "id": "14599247",
-      "filename": "rikiDikiShow.ogg",
-      "text": "Riki diki show",
-      "tags": "riki diki show"
-    },
-    {
-      "id": "16474210",
-      "filename": "coommo.ogg",
-      "text": "¿¡ Cómmo !?",
-      "tags": "como commo"
-    },
-    {
-      "id": "16747536",
-      "filename": "unaLeccionDeHumildad.ogg",
-      "text": "Una lección de humildad",
-      "tags": "una leccion de humildad"
-    },
-    {
-      "id": "18160090",
-      "filename": "laHermita.ogg",
-      "text": "La ermita",
-      "tags": "la ermita"
-    },
-    {
-      "id": "24550004",
-      "filename": "allRight.ogg",
-      "text": "All Right",
-      "tags": "all right"
-    },
-    {
-      "id": "25077723",
-      "filename": "aPijoSacao.ogg",
-      "text": "A pijo sacao",
-      "tags": "a pijo sacao"
-    },
-    {
-      "id": "25812245",
-      "filename": "pareciaQueSi.ogg",
-      "text": "Parecía que sí",
-      "tags": "parecia que si"
-    },
-    {
-      "id": "27700545",
-      "filename": "laVidaModernaEs.ogg",
-      "text": "La Vida Moderna Es...",
-      "tags": "la vida moderna es"
-    },
-    {
-      "id": "30669947",
-      "filename": "padre.ogg",
-      "text": "¡Padre!",
-      "tags": "padre"
-    },
-    {
-      "id": "31202872",
-      "filename": "laPromosio.ogg",
-      "text": "La promoció",
-      "tags": "la promocio la promosio"
-    },
-    {
-      "id": "35000969",
-      "filename": "salamanca1977.ogg",
-      "text": "Salamanca 1977",
-      "tags": "salamanca 1977 queque"
-    },
-    {
-      "id": "36302568",
-      "filename": "elRetroces.ogg",
-      "text": "El retroces",
-      "tags": "el retroces julio"
-    },
-    {
-      "id": "38321075",
-      "filename": "laCommedia.ogg",
-      "text": "La coMMedia",
-      "tags": "la commedia la comedia"
-    },
-    {
-      "id": "39903288",
-      "filename": "fua.ogg",
-      "text": "¡Fuaaa!",
-      "tags": "fuaaa"
-    },
-    {
-      "id": "40251363",
-      "filename": "conseguido.ogg",
-      "text": "¡Conseguido!",
-      "tags": "conseguido"
-    },
-    {
-      "id": "40392361",
-      "filename": "elCastellano.ogg",
-      "text": "El castellano",
-      "tags": "el castellano"
-    },
-    {
-      "id": "41682782",
-      "filename": "ipno.ogg",
-      "text": "Ipno Moderdonia",
-      "tags": "himno ipno moderdonia"
-    },
-    {
-      "id": "41713151",
-      "filename": "elMoonwalk.ogg",
-      "text": "El Moonwalk",
-      "tags": "el moonwalk julio"
-    },
-    {
-      "id": "41823189",
-      "filename": "tirandoDeFrenoDeMano.ogg",
-      "text": "Tirando de freno de mano",
-      "tags": "tirando de freno de mano julio"
-    },
-    {
-      "id": "41936711",
-      "filename": "yQueHayEnIfema.ogg",
-      "text": "¿Y qué hay en Ifema?",
-      "tags": "que hay en ifema"
-    },
-    {
-      "id": "42150843",
-      "filename": "laReview.ogg",
-      "text": "La Review",
-      "tags": "la review"
-    },
-    {
-      "id": "42626012",
-      "filename": "granadillaDeAbona1973.ogg",
-      "text": "Granadilla de Abona 1973",
-      "tags": "granadilla de abona 1973 ignatius"
-    },
-    {
-      "id": "42885982",
-      "filename": "unPerro.ogg",
-      "text": "Un perro",
-      "tags": "un perro"
-    },
-    {
-      "id": "48932644",
-      "filename": "serModernoHoy.ogg",
-      "text": "Ser moderno hoy",
-      "tags": "ser moderno hoy"
-    },
-    {
-      "id": "52627530",
-      "filename": "pideseloAQueque.ogg",
-      "text": "Pídeselo a Quequé",
-      "tags": "pideselo a queque"
-    },
-    {
-      "id": "53633162",
-      "filename": "derrapandoEnPrimera.ogg",
-      "text": "Derrapando en primera",
-      "tags": "derrapando en primera julio"
-    },
-    {
-      "id": "54691644",
-      "filename": "nosHemosTraidoUnaCosa.ogg",
-      "text": "Nos hemos traído una cosa",
-      "tags": "nos hemos traido una cosa"
-    },
-    {
-      "id": "56173722",
-      "filename": "pollitoDeTroya.ogg",
-      "text": "¡Pollito de Troya!",
-      "tags": "pollito de troya"
-    },
-    {
-      "id": "57614421",
-      "filename": "laPalancaDeEmergencia.ogg",
-      "text": "La palanca de emergencia",
-      "tags": "la palanca de emergencia julio"
-    },
-    {
-      "id": "59553680",
+      "id": "5603970",
       "filename": "nosHanDadoUnCDPorLaCalle.ogg",
       "text": "Nos han dado un CD por la calle",
       "tags": "nos han dado un cd por la calle"
     },
     {
-      "id": "65311243",
-      "filename": "elcuencoesedelasfloressecas.ogg",
-      "text": "El cuenco ese con flores secas",
-      "tags": "el cuenco ese con flores secas"
-    },
-    {
-      "id": "66676772",
-      "filename": "siii.ogg",
-      "text": "¡Si!",
-      "tags": "siiiiiiiiiiiiiiiii"
-    },
-    {
-      "id": "67781050",
-      "filename": "laTransformasio.ogg",
-      "text": "La transformació",
-      "tags": "la transformacio la transformasio"
-    },
-    {
-      "id": "68180710",
-      "filename": "upydNo.ogg",
-      "text": "¡UPyD!",
-      "tags": "upyd"
-    },
-    {
-      "id": "68761846",
+      "id": "6233993",
       "filename": "mimimimi.ogg",
       "text": "Mimimimi",
       "tags": "mimimimi"
     },
     {
-      "id": "70697901",
-      "filename": "laReflexio.ogg",
-      "text": "La reflexió",
-      "tags": "la reflexio"
-    },
-    {
-      "id": "72376535",
-      "filename": "fascismoDelBueno.ogg",
-      "text": "Fascismo del bueno",
-      "tags": "fascismo del bueno"
-    },
-    {
-      "id": "73600972",
-      "filename": "vasitoDeAgua.ogg",
-      "text": "¡Vasito de agua!",
-      "tags": "vasito de agua"
-    },
-    {
-      "id": "75440952",
-      "filename": "sacudirLaAlfrombra.ogg",
-      "text": "Sacudir la alfrombra",
-      "tags": "sacudir la alfrombra julio"
-    },
-    {
-      "id": "77938545",
-      "filename": "elCancaneo.ogg",
-      "text": "El cancaneo",
-      "tags": "el cancaneo julio"
-    },
-    {
-      "id": "80315196",
-      "filename": "murciasoterrada-entornoetfriendly_ver2.ogg",
-      "text": "Murcia soterrada. Entorno ET Friendly",
-      "tags": "murcia soterrada entorno et friendly nos jugamos mucho ignatius farray"
-    },
-    {
-      "id": "84767142",
-      "filename": "zorra.ogg",
-      "text": "Zorraaa",
-      "tags": "zorra patriarcado julio"
-    },
-    {
-      "id": "88282127",
-      "filename": "elCable.ogg",
-      "text": "El cable",
-      "tags": "el cable"
-    },
-    {
-      "id": "89418421",
-      "filename": "elSecretito.ogg",
-      "text": "El secretito",
-      "tags": "el secretito"
-    },
-    {
-      "id": "90682201",
+      "id": "7912018",
       "filename": "estafeo.ogg",
       "text": "Está feo",
       "tags": "esta feo julio"
     },
     {
-      "id": "91156897",
-      "filename": "whatATimeToBeAlive.ogg",
-      "text": "What a time to be alive",
-      "tags": "what a time to be alive"
+      "id": "8063025",
+      "filename": "pollitoDeTroya.ogg",
+      "text": "¡Pollito de Troya!",
+      "tags": "pollito de troya"
     },
     {
-      "id": "92149744",
-      "filename": "choqueDePre.ogg",
-      "text": "Choque de pre",
-      "tags": "choque de pre"
+      "id": "9090002",
+      "filename": "siii.ogg",
+      "text": "¡Si!",
+      "tags": "siiiiiiiiiiiiiiiii"
     },
     {
-      "id": "92295653",
-      "filename": "elVolantazo.ogg",
-      "text": "El volantazo",
-      "tags": "el volantazo julio"
-    },
-    {
-      "id": "92560887",
+      "id": "9961070",
       "filename": "zorro.ogg",
       "text": "Zorrooo",
       "tags": "zorro julio alex pinacho"
     },
     {
-      "id": "92864423",
-      "filename": "ayCarlota.ogg",
-      "text": "¡Ay! Carlota",
-      "tags": "ay carlota"
+      "id": "10715384",
+      "filename": "derrapandoEnPrimera.ogg",
+      "text": "Derrapando en primera",
+      "tags": "derrapando en primera julio"
     },
     {
-      "id": "97993789",
-      "filename": "laIndignacio.ogg",
-      "text": "La indignació",
-      "tags": "la indignacio la indignasio"
+      "id": "11190700",
+      "filename": "murciasoterrada-entornoetfriendly_ver2.ogg",
+      "text": "Murcia soterrada. Entorno ET Friendly",
+      "tags": "murcia soterrada entorno et friendly nos jugamos mucho ignatius farray"
     },
     {
-      "id": "98650996",
+      "id": "12615676",
+      "filename": "loRural.ogg",
+      "text": "Lo rural",
+      "tags": "lo rural"
+    },
+    {
+      "id": "13382283",
       "filename": "queVengaUnFacha.ogg",
       "text": "Que venga un facha",
       "tags": "que venga un facha"
     },
     {
-      "id": "98818061",
+      "id": "15555274",
+      "filename": "elCangrejito.ogg",
+      "text": "El cangrejito",
+      "tags": "el cangrejito julio"
+    },
+    {
+      "id": "15656550",
+      "filename": "fascismoDelBueno.ogg",
+      "text": "Fascismo del bueno",
+      "tags": "fascismo del bueno"
+    },
+    {
+      "id": "16128849",
+      "filename": "vasitoDeAgua.ogg",
+      "text": "¡Vasito de agua!",
+      "tags": "vasito de agua"
+    },
+    {
+      "id": "18487086",
+      "filename": "upydNo.ogg",
+      "text": "¡UPyD!",
+      "tags": "upyd"
+    },
+    {
+      "id": "20949333",
+      "filename": "elRetroces.ogg",
+      "text": "El retroces",
+      "tags": "el retroces julio"
+    },
+    {
+      "id": "22153196",
+      "filename": "sacudirLaAlfrombra.ogg",
+      "text": "Sacudir la alfrombra",
+      "tags": "sacudir la alfrombra julio"
+    },
+    {
+      "id": "24141248",
+      "filename": "tirandoDeFrenoDeMano.ogg",
+      "text": "Tirando de freno de mano",
+      "tags": "tirando de freno de mano julio"
+    },
+    {
+      "id": "27259943",
+      "filename": "elVolantazo.ogg",
+      "text": "El volantazo",
+      "tags": "el volantazo julio"
+    },
+    {
+      "id": "31138280",
+      "filename": "ipno.ogg",
+      "text": "Ipno Moderdonia",
+      "tags": "himno ipno moderdonia"
+    },
+    {
+      "id": "31363599",
+      "filename": "laPalancaDeEmergencia.ogg",
+      "text": "La palanca de emergencia",
+      "tags": "la palanca de emergencia julio"
+    },
+    {
+      "id": "33324558",
+      "filename": "fua.ogg",
+      "text": "¡Fuaaa!",
+      "tags": "fuaaa"
+    },
+    {
+      "id": "33461749",
+      "filename": "laHermita.ogg",
+      "text": "La ermita",
+      "tags": "la ermita"
+    },
+    {
+      "id": "37044780",
+      "filename": "rikiDikiShow.ogg",
+      "text": "Riki diki show",
+      "tags": "riki diki show"
+    },
+    {
+      "id": "37445215",
+      "filename": "laHumillasio.ogg",
+      "text": "La humillació",
+      "tags": "La humillacio la humillasio"
+    },
+    {
+      "id": "41995961",
       "filename": "gritoCabrero.ogg",
       "text": "Grito Cabrero",
       "tags": "grito cabrero"
+    },
+    {
+      "id": "42039805",
+      "filename": "padre.ogg",
+      "text": "¡Padre!",
+      "tags": "padre"
+    },
+    {
+      "id": "47846947",
+      "filename": "recogiendoCable.ogg",
+      "text": "Recogiendo cable",
+      "tags": "recogiendo cable julio"
+    },
+    {
+      "id": "48745296",
+      "filename": "laVidaModernaEs.ogg",
+      "text": "La Vida Moderna Es...",
+      "tags": "la vida moderna es"
+    },
+    {
+      "id": "49492890",
+      "filename": "allRight.ogg",
+      "text": "All Right",
+      "tags": "all right"
+    },
+    {
+      "id": "49961956",
+      "filename": "laTransformasio.ogg",
+      "text": "La transformació",
+      "tags": "la transformacio la transformasio"
+    },
+    {
+      "id": "54146355",
+      "filename": "granadillaDeAbona1973.ogg",
+      "text": "Granadilla de Abona 1973",
+      "tags": "granadilla de abona 1973 ignatius"
+    },
+    {
+      "id": "55120006",
+      "filename": "pareciaQueSi.ogg",
+      "text": "Parecía que sí",
+      "tags": "parecia que si"
+    },
+    {
+      "id": "55751831",
+      "filename": "elCancaneo.ogg",
+      "text": "El cancaneo",
+      "tags": "el cancaneo julio"
+    },
+    {
+      "id": "57923910",
+      "filename": "laReflexio.ogg",
+      "text": "La reflexió",
+      "tags": "la reflexio"
+    },
+    {
+      "id": "61819578",
+      "filename": "espanya.ogg",
+      "text": "España",
+      "tags": "espana julio"
+    },
+    {
+      "id": "62867779",
+      "filename": "elCable.ogg",
+      "text": "El cable",
+      "tags": "el cable"
+    },
+    {
+      "id": "63227895",
+      "filename": "salamanca1977.ogg",
+      "text": "Salamanca 1977",
+      "tags": "salamanca 1977 queque"
+    },
+    {
+      "id": "63276403",
+      "filename": "elMoonwalk.ogg",
+      "text": "El Moonwalk",
+      "tags": "el moonwalk julio"
+    },
+    {
+      "id": "63473471",
+      "filename": "whatATimeToBeAlive.ogg",
+      "text": "What a time to be alive",
+      "tags": "what a time to be alive"
+    },
+    {
+      "id": "64576447",
+      "filename": "serModernoHoy.ogg",
+      "text": "Ser moderno hoy",
+      "tags": "ser moderno hoy"
+    },
+    {
+      "id": "65554523",
+      "filename": "yQueHayEnIfema.ogg",
+      "text": "¿Y qué hay en Ifema?",
+      "tags": "que hay en ifema"
+    },
+    {
+      "id": "66963551",
+      "filename": "coommo.ogg",
+      "text": "¿¡ Cómmo !?",
+      "tags": "como commo"
+    },
+    {
+      "id": "67567190",
+      "filename": "unPerro.ogg",
+      "text": "Un perro",
+      "tags": "un perro"
+    },
+    {
+      "id": "68135698",
+      "filename": "choqueDePre.ogg",
+      "text": "Choque de pre",
+      "tags": "choque de pre"
+    },
+    {
+      "id": "69348617",
+      "filename": "elCastellano.ogg",
+      "text": "El castellano",
+      "tags": "el castellano"
+    },
+    {
+      "id": "71932920",
+      "filename": "genteQueSeFlipa.ogg",
+      "text": "Gente que se flipa",
+      "tags": "gente que se flipa"
+    },
+    {
+      "id": "72166977",
+      "filename": "conseguido.ogg",
+      "text": "¡Conseguido!",
+      "tags": "conseguido"
+    },
+    {
+      "id": "72526855",
+      "filename": "pideseloAQueque.ogg",
+      "text": "Pídeselo a Quequé",
+      "tags": "pideselo a queque"
+    },
+    {
+      "id": "72640837",
+      "filename": "losGilipollitas.ogg",
+      "text": "Los gilipollitas",
+      "tags": "los gilipollitas"
+    },
+    {
+      "id": "77050704",
+      "filename": "elRancius.ogg",
+      "text": "El Rancius",
+      "tags": "el rancius"
+    },
+    {
+      "id": "80593237",
+      "filename": "nosHemosTraidoUnaCosa.ogg",
+      "text": "Nos hemos traído una cosa",
+      "tags": "nos hemos traido una cosa"
+    },
+    {
+      "id": "82349369",
+      "filename": "nosHanTraidoUnaCosa.ogg",
+      "text": "Nos han traído una cosa",
+      "tags": "nos han traido una cosa"
+    },
+    {
+      "id": "84882301",
+      "filename": "zorra.ogg",
+      "text": "Zorraaa",
+      "tags": "zorra patriarcado julio"
+    },
+    {
+      "id": "85397840",
+      "filename": "elcuencoesedelasfloressecas.ogg",
+      "text": "El cuenco ese con flores secas",
+      "tags": "el cuenco ese con flores secas"
+    },
+    {
+      "id": "91253010",
+      "filename": "unaLeccionDeHumildad.ogg",
+      "text": "Una lección de humildad",
+      "tags": "una leccion de humildad"
+    },
+    {
+      "id": "92958314",
+      "filename": "laReview.ogg",
+      "text": "La Review",
+      "tags": "la review"
+    },
+    {
+      "id": "95289377",
+      "filename": "aPijoSacao.ogg",
+      "text": "A pijo sacao",
+      "tags": "a pijo sacao"
+    },
+    {
+      "id": "95570708",
+      "filename": "laPromosio.ogg",
+      "text": "La promoció",
+      "tags": "la promocio la promosio"
+    },
+    {
+      "id": "95998382",
+      "filename": "elSecretito.ogg",
+      "text": "El secretito",
+      "tags": "el secretito"
+    },
+    {
+      "id": "98644015",
+      "filename": "laCommedia.ogg",
+      "text": "La coMMedia",
+      "tags": "la commedia la comedia"
+    },
+    {
+      "id": "99931722",
+      "filename": "ayCarlota.ogg",
+      "text": "¡Ay! Carlota",
+      "tags": "ay carlota"
+    },
+    {
+      "id": "99969181",
+      "filename": "laIndignacio.ogg",
+      "text": "La indignació",
+      "tags": "la indignacio la indignasio"
     }
   ]
 }

@@ -9,24 +9,53 @@ import unidecode
 import random
 from time import sleep
 import persistence
-
+import os
 
 LOG = logger.getLogger('LaVidaModerna_Bot')
 DATA_JSON = 'LaVidaModerna/data.json'
 REMOVE_CHARS = string.punctuation + string.whitespace
 TELEGRAM_INLINE_MAX_RESULTS = 48
 
+_ENV_TELEGRAM_BOT_TOKEN = "TELEGRAM_BOT_TOKEN"
+_ENV_TELEGRAM_USER_ALIAS = "TELEGRAM_USER_ALIAS"
+_ENV_DATABASE_LOCATION = 'DATABASE_LOCATION'
+
+
 parser = argparse.ArgumentParser()
 parser.add_argument("-v", "--verbosity", help="Defines log verbosity",
                     choices=['CRITICAL', 'ERROR', 'WARN', 'INFO', 'DEBUG'], default='INFO')
 parser.add_argument("-b", "--bucket", help="Bucket or url where audios are stored",
                     default='https://github.com/dmcelectrico/SoundsTable/raw/master/LaVidaModerna/')
-parser.add_argument("--database", help="Database file location")
-parser.add_argument("TELEGRAM_API_TOKEN", type=str, help="Telegram API token given by @botfather.")
+parser.add_argument("--database", help="Database file location", default='db.sqlite')
+parser.add_argument("--token", type=str, help="Telegram API token given by @botfather.")
+parser.add_argument("--admin", type=str, help="Alias of the admin user.")
+
 args = parser.parse_args()
 
 BUCKET = args.bucket
 logger.setLogLevel(args.verbosity)
+
+try:
+    args.token = os.environ[_ENV_TELEGRAM_BOT_TOKEN]
+except KeyError as key_error:
+    if not args.token:
+        LOG.critical(
+            'No telegram bot token provided. Please do so using --token argument or %s environment variable.',
+            _ENV_TELEGRAM_BOT_TOKEN)
+        exit(1)
+
+try:
+    args.admin = os.environ[_ENV_TELEGRAM_USER_ALIAS]
+except KeyError as key_error:
+    if not args.admin:
+        LOG.warn(
+            'No admin user specified. Please do so using --admin argument or %s environment variable.',
+            _ENV_TELEGRAM_USER_ALIAS)
+
+try:
+    args.database = os.environ[_ENV_DATABASE_LOCATION]
+except KeyError:
+    pass
 
 LOG.info('Starting up bot...')
 database = persistence.SqLite(db_file=args.database)
@@ -37,7 +66,7 @@ database = persistence.SqLite(db_file=args.database)
 #        sound["id"] = ''.join(random.choices(string.digits, k=8))
 #        LOG.debug("Generated ID for %s: %s",sound["filename"],sound["id"])
 
-bot = telebot.TeleBot(args.TELEGRAM_API_TOKEN)
+bot = telebot.TeleBot(args.token)
 
 
 @bot.message_handler(commands=['start'])
@@ -69,7 +98,7 @@ def query_text(inline_query):
         LOG.debug("Querying: " + text)
         r = []
         for sound in sounds:
-            if text in sound["tags"]: #FIXME: Improve search
+            if text in sound["tags"]:  # FIXME: Improve search
                 r.append(types.InlineQueryResultVoice(
                     sound["id"], BUCKET + sound["filename"], sound["text"], caption=sound["text"]))
             if len(r) > TELEGRAM_INLINE_MAX_RESULTS:
