@@ -160,8 +160,7 @@ while True:
     try:
         sleep(1)
         LOG.debug("Polling started")
-        code = bot.polling()
-        LOG.debug(code)
+        bot.polling()
     except requests.exceptions.ConnectionError as connection_error:
         LOG.error("ConnectionError: Cannot connect to server.")
         LOG.debug(connection_error)

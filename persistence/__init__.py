@@ -3,7 +3,35 @@ import sqlite3
 
 LOG = logging.getLogger('LaVidaModerna_Bot.persistence')
 
-TABLE_SOUNDS = 'sounds'  # name of the table to be created
+INTEGER = 'INTEGER'
+TEXT = 'TEXT'
+BOOLEAN = 'BOOLEAN'
+default_column_type = TEXT  # E.g., INTEGER, TEXT, NULL, REAL, BLOB
+
+""" |  id   |   filename    |   text    |   tags    |"""
+"""  INTEGER      TEXT          TEXT        TEXT     """
+sounds_table = 'sounds'
+sounds_col_id = 'id'  # name of the PRIMARY KEY column
+sounds_col_id_type = INTEGER
+sounds_col_filename = 'filename'  # name of the new column
+sounds_col_text = 'text'  # name of the new column
+sounds_col_tags = 'tags'  # name of the new column
+sounds_index_name = 'index_filename'
+
+""" | id | is_bot | first_name | last_name | username | language_code | num_queries | num_results | """
+"""   INT BOOLEAN       TEXT        TEXT        TEXT        TEXT           INTEGER      INTEGER     """
+users_table = 'users'
+users_col_id = 'id'
+users_col_id_type = INTEGER
+users_col_is_bot = 'is_bot'
+users_col_is_bot_type = BOOLEAN
+users_col_first_name = 'first_name'
+users_col_last_name = 'last_name'
+users_col_username = 'username'
+users_col_language_code = 'language_code'
+users_col_num_queries = 'num_queries'
+users_col_num_results = 'num_results'
+users_col_num_type = INTEGER
 
 
 class SqLite:
@@ -23,12 +51,14 @@ class SqLite:
         tables = self.get_tables()
         LOG.debug('Tables currently in db: %s', str(tables))
         # Table checking
-        if 'sounds' not in tables:
+        if sounds_table not in tables:
             self.create_table_sounds()
+        if users_table not in tables:
+            self.create_table_users()
 
     def get_sounds(self):
         sql = 'SELECT * FROM {tn};'
-        self.cursor.execute(sql.format(tn=TABLE_SOUNDS))
+        self.cursor.execute(sql.format(tn=sounds_table))
         result_set = self.cursor.fetchall()
         LOG.debug("get_sounds: Obtained: %d rows.", len(result_set))
         sounds = map_to_sounds(result_set)
@@ -37,7 +67,7 @@ class SqLite:
     def get_sound(self, id=None, filename=None):
         sql = 'SELECT * FROM {tn} WHERE {query};'
         query = resolve_where(id,filename)
-        self.cursor.execute(sql.format(tn=TABLE_SOUNDS, id=id, query=query))
+        self.cursor.execute(sql.format(tn=sounds_table, id=id, query=query))
         result_set = self.cursor.fetchall()
         sounds = map_to_sounds(result_set)
         return sounds
@@ -45,7 +75,7 @@ class SqLite:
     def add_sound(self, id, filename, text, tags):
         LOG.info('Adding sound: %s %s', id, filename)
         self.cursor.execute('INSERT INTO {tn} VALUES ({id}, "{filename}", "{text}", "{tags}")'
-              .format(tn=TABLE_SOUNDS, id=id, filename=filename, text=text, tags=tags))
+                            .format(tn=sounds_table, id=id, filename=filename, text=text, tags=tags))
         self.commit()
 
     def delete_sound(self, sound):
@@ -54,7 +84,7 @@ class SqLite:
 
         query = resolve_where_from_sound(sound)
 
-        self.cursor.execute(sql.format(tn=TABLE_SOUNDS, query=query))
+        self.cursor.execute(sql.format(tn=sounds_table, query=query))
         self.commit()
 
     def commit(self):
@@ -79,37 +109,27 @@ class SqLite:
 
     def create_table_sounds(self):
         """ SOUND INDEX TABLE """
-        LOG.info('Creating table sounds')
-        sql_create = 'CREATE TABLE {tn} ({id} {idft} PRIMARY KEY, \
+        LOG.info('Creating table %s', sounds_table)
+        sounds_sql_create_table = 'CREATE TABLE {tn} ({id} {idft} PRIMARY KEY, \
                                 {fn} {fnft}, \
                                 {txt} {txtft}, \
-                                {tags} {tagsft})'
-        sql_index = 'CREATE UNIQUE INDEX {iname} \
-                                    ON {tn}({col});'
+                                {tags} {tagsft})'.format(tn=sounds_table,
+                                                         id=sounds_col_id, idft=sounds_col_id_type,
+                                                         fn=sounds_col_filename, fnft=default_column_type,
+                                                         txt=sounds_col_text, txtft=default_column_type,
+                                                         tags=sounds_col_tags, tagsft=default_column_type)
+        sounds_sql_create_index = 'CREATE UNIQUE INDEX {iname} \
+                                    ON {tn}({col});'.format(iname=sounds_index_name,
+                                                            tn=sounds_table, col=sounds_col_filename)
+        LOG.debug("Running query: %s",sounds_sql_create_table)
+        self.cursor.execute(sounds_sql_create_table)
 
-        col_id = 'id'  # name of the PRIMARY KEY column
-        col_id_type = 'INTEGER'
-        col_filename = 'filename'  # name of the new column
-        col_text = 'text'  # name of the new column
-        col_tags = 'tags'  # name of the new column
-        default_column_type = 'TEXT'  # E.g., INTEGER, TEXT, NULL, REAL, BLOB
-
-        index_name='index_filename'
-
-        # Creating a new SQLite table
-        self.cursor.execute(sql_create.format(tn=TABLE_SOUNDS,
-                            id=col_id, idft=col_id_type,
-                            fn=col_filename, fnft=default_column_type,
-                            txt=col_text, txtft=default_column_type,
-                            tags=col_tags, tagsft=default_column_type))
-
-        # Creating filename index
-        self.cursor.execute(sql_index.format(iname=index_name,
-                                             tn=TABLE_SOUNDS, col=col_filename))
+        LOG.debug("Running query: %s",sounds_sql_create_index)
+        self.cursor.execute(sounds_sql_create_index)
 
     def create_table_users(self):
-        """ TODO: User info table.
-        Example user query:
+        """ User info table.
+               Example user query:
         {
             'id': '789066751082661', 'from_user':
             {
@@ -124,18 +144,26 @@ class SqLite:
             'query': 'zorro',
             'offset': ''
         }
-
-        Data to store:
-         - user id INTEGER
-         - is_bot BOOLEAN
-         - first_name STRING
-         - last_name STRING
-         - username STRING
-         - language_code STRING
-         - num_queries INTEGER
-         - num_results INTEGER
         """
-        pass
+        LOG.info('Creating table %s', users_table)
+        users_sql_create_table = 'CREATE TABLE {table_name} ({id} {id_type} PRIMARY KEY,' \
+                           '{is_bot} {is_bot_type},' \
+                           '{first_name} {first_name_type},' \
+                           '{last_name} {last_name_type},' \
+                           '{username} {username_type},' \
+                           '{language_code} {language_code_type},' \
+                           '{num_queries} {num_queries_type},' \
+                           '{num_results} {num_results_type}' \
+                           ')'.format(table_name=users_table, id=users_col_id, id_type=users_col_id_type,
+                                      is_bot=users_col_is_bot, is_bot_type=users_col_is_bot_type,
+                                      first_name=users_col_first_name, first_name_type=default_column_type,
+                                      last_name=users_col_last_name, last_name_type=default_column_type,
+                                      username=users_col_username, username_type=default_column_type,
+                                      language_code=users_col_language_code, language_code_type=default_column_type,
+                                      num_queries=users_col_num_queries, num_queries_type=users_col_num_type,
+                                      num_results=users_col_num_results, num_results_type=users_col_num_type)
+        LOG.debug("Running query: %s", users_sql_create_table)
+        self.cursor.execute(users_sql_create_table)
 
     def create_table_query_history(self):
         """ TODO: User interaction activity history
