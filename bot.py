@@ -19,6 +19,7 @@ _ENV_TELEGRAM_BOT_TOKEN = "TELEGRAM_BOT_TOKEN"
 _ENV_TELEGRAM_USER_ALIAS = "TELEGRAM_USER_ALIAS"
 _ENV_DATABASE_SQLITE = 'DATABASE_SQLITE'
 _ENV_DATA_JSON = 'DATA_JSON'
+_ENV_LOGGING_FILE = 'LOGFILE'
 
 
 parser = argparse.ArgumentParser()
@@ -30,11 +31,23 @@ parser.add_argument("--database", help="Database file location", default='db.sql
 parser.add_argument("--token", type=str, help="Telegram API token given by @botfather.")
 parser.add_argument("--admin", type=str, help="Alias of the admin user.")
 parser.add_argument("--data", type=str, help="Data JSON path.", default='data.json')
+parser.add_argument("--logfile", type=str, help="Log to defined file.")
 
 args = parser.parse_args()
 
 BUCKET = args.bucket
+
+
+try:
+    args.logfile = os.environ[_ENV_LOGGING_FILE]
+except KeyError:
+    pass
+
+if args.logfile:
+    logger.add_file_handler(args.logfile, args.verbosity)
+
 logger.set_log_level(args.verbosity)
+
 
 try:
     args.token = os.environ[_ENV_TELEGRAM_BOT_TOKEN]
