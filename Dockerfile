@@ -1,11 +1,17 @@
-FROM python:3-slim
+FROM python:3-alpine
 
 COPY requirements.txt /
 RUN pip3 install -r requirements.txt
 
-COPY logger.py /
-COPY LaVidaModerna/data.json LaVidaModerna/data.json
-COPY persistence /persistence
-COPY bot.py /
+WORKDIR /app
+VOLUME /data
 
-ENTRYPOINT ["python3", "/bot.py"]
+ENV DATABASE_SQLITE=/data/db.sqlite
+ENV DATA_JSON=/app/data.json
+
+COPY logger.py /app
+COPY persistence /app/persistence
+COPY bot.py /app
+COPY data.json /app/data.json
+
+ENTRYPOINT ["python3", "bot.py"]

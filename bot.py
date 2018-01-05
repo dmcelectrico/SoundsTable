@@ -11,14 +11,14 @@ from time import sleep
 import persistence
 import os
 
-LOG = logger.getLogger('LaVidaModerna_Bot')
-DATA_JSON = 'LaVidaModerna/data.json'
+LOG = logger.get_logger('LaVidaModerna_Bot')
 REMOVE_CHARS = string.punctuation + string.whitespace
 TELEGRAM_INLINE_MAX_RESULTS = 48
 
 _ENV_TELEGRAM_BOT_TOKEN = "TELEGRAM_BOT_TOKEN"
 _ENV_TELEGRAM_USER_ALIAS = "TELEGRAM_USER_ALIAS"
-_ENV_DATABASE_LOCATION = 'DATABASE_LOCATION'
+_ENV_DATABASE_SQLITE = 'DATABASE_SQLITE'
+_ENV_DATA_JSON = 'DATA_JSON'
 
 
 parser = argparse.ArgumentParser()
@@ -29,11 +29,12 @@ parser.add_argument("-b", "--bucket", help="Bucket or url where audios are store
 parser.add_argument("--database", help="Database file location", default='db.sqlite')
 parser.add_argument("--token", type=str, help="Telegram API token given by @botfather.")
 parser.add_argument("--admin", type=str, help="Alias of the admin user.")
+parser.add_argument("--data", type=str, help="Data JSON path.", default='data.json')
 
 args = parser.parse_args()
 
 BUCKET = args.bucket
-logger.setLogLevel(args.verbosity)
+logger.set_log_level(args.verbosity)
 
 try:
     args.token = os.environ[_ENV_TELEGRAM_BOT_TOKEN]
@@ -53,18 +54,17 @@ except KeyError as key_error:
             _ENV_TELEGRAM_USER_ALIAS)
 
 try:
-    args.database = os.environ[_ENV_DATABASE_LOCATION]
+    args.database = os.environ[_ENV_DATABASE_SQLITE]
+except KeyError:
+    pass
+
+try:
+    args.data = os.environ[_ENV_DATA_JSON]
 except KeyError:
     pass
 
 LOG.info('Starting up bot...')
 database = persistence.SqLite(db_file=args.database)
-# Build sound URLs based in the bucket and unique IDs for the responses
-# for sound in sounds:
-#    sound["filename"] = args.bucket + sound["filename"]
-#    if id not in sound:
-#        sound["id"] = ''.join(random.choices(string.digits, k=8))
-#        LOG.debug("Generated ID for %s: %s",sound["filename"],sound["id"])
 
 bot = telebot.TeleBot(args.token)
 
@@ -110,31 +110,33 @@ def query_text(inline_query):
 
 def synchronize_sounds():
     db_sounds = database.get_sounds()
-    LOG.debug("Sounds in db (%d): %s", len(db_sounds), str(db_sounds))
+    LOG.debug("Sounds in db (%d)", len(db_sounds))
 
-    b_data_json = open(DATA_JSON).read()
+    b_data_json = open(args.data).read()
     data_json = json.loads(b_data_json)
 
     json_sounds = data_json["sounds"]
-    LOG.debug("Sounds in data.json (%d): %s", len(json_sounds), str(json_sounds))
-    json_modified = False
+    LOG.debug("Sounds in data.json (%d)", len(json_sounds))
 
+    # Adding new sounds to db
     for jsound in json_sounds:
-        if jsound not in db_sounds:
+        query = database.get_sound(filename=jsound["filename"])
+        if len(query) == 0:
             jsound["id"] = ''.join(random.choices(string.digits, k=8))
             database.add_sound(jsound["id"], jsound["filename"], jsound["text"], jsound["tags"])
-            json_modified = True
+        if len(query) > 1:
+            LOG.warn("Possible duplicate: %s", str(query))
 
+    # Removing deleted sounds form db
+    db_sounds = database.get_sounds()
     for db_sound in db_sounds:
-        if db_sound not in json_sounds:
-            database.delete_sound(db_sound['id'])
-
-    if json_modified:
-        # Reload database and synchronize data.json file
-        data_json["sounds"] = database.get_sounds()
-        LOG.info("Updating %s file", DATA_JSON)
-        with open(DATA_JSON, 'w') as file:
-            json.dump(data_json, file, indent=2, ensure_ascii=False)
+        found = None
+        for jsound in json_sounds:
+            if jsound["filename"] == db_sound["filename"]:
+                found = jsound
+                break
+        if not found:
+            database.delete_sound(db_sound)
 
     return db_sounds
 

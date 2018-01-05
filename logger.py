@@ -18,16 +18,19 @@ ch.setFormatter(formatter)
 logger.addHandler(fh)
 logger.addHandler(ch)
 
-def setLogLevel(verbosity):
-    numeric_level = getNumericLogLevel(verbosity)
+
+def set_log_level(verbosity):
+    numeric_level = get_numeric_log_level(verbosity)
     for c_logger in logger.handlers:
         c_logger.setLevel(numeric_level)
 
-def getNumericLogLevel(verbosity):
+
+def get_numeric_log_level(verbosity):
     numeric_level = getattr(logging, verbosity.upper(), None)
     if not isinstance(numeric_level, int):
         raise ValueError('Invalid log level: %s' % verbosity)
     return numeric_level
 
-def getLogger(name):
+
+def get_logger(name):
     return logging.getLogger(name)

@@ -1,0 +1,6 @@
+*.sqlite
+*.log
+.git
+venv
+LaVidaModerna/
+__pycache__

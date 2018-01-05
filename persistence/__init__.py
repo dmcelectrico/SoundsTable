@@ -34,9 +34,10 @@ class SqLite:
         sounds = map_to_sounds(result_set)
         return sounds
 
-    def get_sound(self, id):
-        sql = 'SELECT * FROM {tn} WHERE id = {id};'
-        self.cursor.execute(sql.format(tb=TABLE_SOUNDS, id=id))
+    def get_sound(self, id=None, filename=None):
+        sql = 'SELECT * FROM {tn} WHERE {query};'
+        query = resolve_where(id,filename)
+        self.cursor.execute(sql.format(tn=TABLE_SOUNDS, id=id, query=query))
         result_set = self.cursor.fetchall()
         sounds = map_to_sounds(result_set)
         return sounds
@@ -47,10 +48,13 @@ class SqLite:
               .format(tn=TABLE_SOUNDS, id=id, filename=filename, text=text, tags=tags))
         self.commit()
 
-    def delete_sound(self, id):
-        LOG.info('Deleting sound %s', id)
-        sql = 'DELETE FROM {tn} WHERE id = {id};'
-        self.cursor.execute(sql.format(tn=TABLE_SOUNDS, id=id))
+    def delete_sound(self, sound):
+        LOG.info('Deleting sound %s', str(sound))
+        sql = 'DELETE FROM {tn} WHERE {query};'
+
+        query = resolve_where_from_sound(sound)
+
+        self.cursor.execute(sql.format(tn=TABLE_SOUNDS, query=query))
         self.commit()
 
     def commit(self):
@@ -76,6 +80,13 @@ class SqLite:
     def create_table_sounds(self):
         """ SOUND INDEX TABLE """
         LOG.info('Creating table sounds')
+        sql_create = 'CREATE TABLE {tn} ({id} {idft} PRIMARY KEY, \
+                                {fn} {fnft}, \
+                                {txt} {txtft}, \
+                                {tags} {tagsft})'
+        sql_index = 'CREATE UNIQUE INDEX {iname} \
+                                    ON {tn}({col});'
+
         col_id = 'id'  # name of the PRIMARY KEY column
         col_id_type = 'INTEGER'
         col_filename = 'filename'  # name of the new column
@@ -83,16 +94,18 @@ class SqLite:
         col_tags = 'tags'  # name of the new column
         default_column_type = 'TEXT'  # E.g., INTEGER, TEXT, NULL, REAL, BLOB
 
-        # Creating a new SQLite table with 1 column
-        self.cursor.execute('CREATE TABLE {tn} ({id} {idft} PRIMARY KEY, \
-                                {fn} {fnft}, \
-                                {txt} {txtft}, \
-                                {tags} {tagsft})'
-                            .format(tn=TABLE_SOUNDS,
-                                    id=col_id, idft=col_id_type,
-                                    fn=col_filename, fnft=default_column_type,
-                                    txt=col_text, txtft=default_column_type,
-                                    tags=col_tags, tagsft=default_column_type))
+        index_name='index_filename'
+
+        # Creating a new SQLite table
+        self.cursor.execute(sql_create.format(tn=TABLE_SOUNDS,
+                            id=col_id, idft=col_id_type,
+                            fn=col_filename, fnft=default_column_type,
+                            txt=col_text, txtft=default_column_type,
+                            tags=col_tags, tagsft=default_column_type))
+
+        # Creating filename index
+        self.cursor.execute(sql_index.format(iname=index_name,
+                                             tn=TABLE_SOUNDS, col=col_filename))
 
     def create_table_users(self):
         """ TODO: User info table.
@@ -172,3 +185,29 @@ def map_to_sound(row):
     sound["text"] = row[2]
     sound["tags"] = row[3]
     return sound
+
+
+def resolve_where_from_sound(sound):
+    id = None
+    filename = None
+    if 'id' in sound:
+        id = sound['id']
+    elif 'filename' in sound:
+        filename = sound['filename']
+
+    return resolve_where(id, filename)
+
+
+def resolve_where(id, filename):
+    query_id = "id = '{id}' "
+    query_filename = "filename = '{filename}' "
+    query = None
+    if id and filename:
+        query = query_id + 'AND ' + query_filename
+    elif id:
+        query = query_id
+    elif filename:
+        query = query_filename
+
+    query = query.format(id=id, filename=filename)
+    return query
