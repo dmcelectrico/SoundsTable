@@ -1,5 +1,6 @@
 import logging
 import sqlite3
+from telebot.types import User # FIXME: Create custom User
 
 LOG = logging.getLogger('LaVidaModerna_Bot.persistence')
 
@@ -66,7 +67,7 @@ class SqLite:
 
     def get_sound(self, id=None, filename=None):
         sql = 'SELECT * FROM {tn} WHERE {query};'
-        query = resolve_where(id,filename)
+        query = resolve_where(id, filename)
         self.cursor.execute(sql.format(tn=sounds_table, id=id, query=query))
         result_set = self.cursor.fetchall()
         sounds = map_to_sounds(result_set)
@@ -86,6 +87,74 @@ class SqLite:
 
         self.cursor.execute(sql.format(tn=sounds_table, query=query))
         self.commit()
+
+    def add_or_update_user(self, user):
+        users = self.get_user(user.id)
+        if len(users) > 0:
+            db_user = users[0]
+            LOG.debug('User %s %s already exist.', user.id, user.username)
+            if db_user != user:
+                LOG.info('Updating user %s %s', db_user.id, db_user.username)
+                sql = 'UPDATE {table_name} SET ' \
+                      '{is_bot} = {is_bot_value}, ' \
+                      '{first_name} = {first_name_value},' \
+                      '{last_name} = {last_name_value},' \
+                      '{username} = {username_value},' \
+                      '{language_code} = {language_code_value}' \
+                      'WHERE {id} = {id_value};'
+            else:
+                return None
+        else:
+            LOG.info('Adding user %s %s', user.id, user.username)
+            sql = 'INSERT OR IGNORE INTO {table_name} ' \
+                  '({id}, ' \
+                  '{is_bot}, ' \
+                  '{first_name}, ' \
+                  '{last_name}, ' \
+                  '{username}, ' \
+                  '{language_code}) VALUES ' \
+                  '({id_value}, ' \
+                  '{is_bot_value},' \
+                  '{first_name_value}' \
+                  '{last_name_value}' \
+                  '{username_value}' \
+                  '{language_code_value}' \
+                  ')'
+        sql.format(table_name=users_table,
+                   id=users_col_id, id_value=user.id,
+                   is_bot=users_col_is_bot, is_bot_value=user.is_bot,
+                   first_name=users_col_first_name, first_name_value=user.first_name,
+                   last_name=users_col_last_name, last_name_value=user.last_name,
+                   username=users_col_username, username_value=user.username,
+                   language_code=users_col_language_code, language_code_value=user.language_code
+                   )
+        LOG.debug('Executing sql: %s', sql)
+        self.cursor.execute(sql)
+
+    def get_user(self, id=None, username=None):
+        query_id = "id = '{id}' "
+        query_username = "username = '{username}' "
+        query = None
+        if id and username:
+            query = query_id + 'AND ' + query_username
+        elif id:
+            query = query_id
+        elif username:
+            query = query_username
+
+        query = query.format(id=id, username=username)
+        sql = 'SELECT * FROM {table_name} WHERE {query}'.format(table_name=users_table, query=query)
+        LOG.debug('Executing sql: %s', sql)
+        self.cursor.execute(sql)
+        result_set = self.cursor.fetchall()
+        users = map_to_users(result_set)
+        return users
+
+    def add_user_query(self):
+        pass
+
+    def add_user_result(self):
+        pass
 
     def commit(self):
         self.connection.commit()
@@ -121,47 +190,31 @@ class SqLite:
         sounds_sql_create_index = 'CREATE UNIQUE INDEX {iname} \
                                     ON {tn}({col});'.format(iname=sounds_index_name,
                                                             tn=sounds_table, col=sounds_col_filename)
-        LOG.debug("Running query: %s",sounds_sql_create_table)
+        LOG.debug("Running query: %s", sounds_sql_create_table)
         self.cursor.execute(sounds_sql_create_table)
 
-        LOG.debug("Running query: %s",sounds_sql_create_index)
+        LOG.debug("Running query: %s", sounds_sql_create_index)
         self.cursor.execute(sounds_sql_create_index)
 
     def create_table_users(self):
-        """ User info table.
-               Example user query:
-        {
-            'id': '789066751082661', 'from_user':
-            {
-                'id': 183718,
-                'is_bot': False,
-                'first_name': 'Mr. Moonhaze',
-                'username': 'MrMoonhaze',
-                'last_name': None,
-                'language_code': 'en-US'
-            },
-            'location': None,
-            'query': 'zorro',
-            'offset': ''
-        }
-        """
+        """ User info table. """
         LOG.info('Creating table %s', users_table)
         users_sql_create_table = 'CREATE TABLE {table_name} ({id} {id_type} PRIMARY KEY,' \
-                           '{is_bot} {is_bot_type},' \
-                           '{first_name} {first_name_type},' \
-                           '{last_name} {last_name_type},' \
-                           '{username} {username_type},' \
-                           '{language_code} {language_code_type},' \
-                           '{num_queries} {num_queries_type},' \
-                           '{num_results} {num_results_type}' \
-                           ')'.format(table_name=users_table, id=users_col_id, id_type=users_col_id_type,
-                                      is_bot=users_col_is_bot, is_bot_type=users_col_is_bot_type,
-                                      first_name=users_col_first_name, first_name_type=default_column_type,
-                                      last_name=users_col_last_name, last_name_type=default_column_type,
-                                      username=users_col_username, username_type=default_column_type,
-                                      language_code=users_col_language_code, language_code_type=default_column_type,
-                                      num_queries=users_col_num_queries, num_queries_type=users_col_num_type,
-                                      num_results=users_col_num_results, num_results_type=users_col_num_type)
+            '{is_bot} {is_bot_type},' \
+            '{first_name} {first_name_type},' \
+            '{last_name} {last_name_type},' \
+            '{username} {username_type},' \
+            '{language_code} {language_code_type},' \
+            '{num_queries} {num_queries_type},' \
+            '{num_results} {num_results_type}' \
+            ')'.format(table_name=users_table, id=users_col_id, id_type=users_col_id_type,
+                       is_bot=users_col_is_bot, is_bot_type=users_col_is_bot_type,
+                       first_name=users_col_first_name, first_name_type=default_column_type,
+                       last_name=users_col_last_name, last_name_type=default_column_type,
+                       username=users_col_username, username_type=default_column_type,
+                       language_code=users_col_language_code, language_code_type=default_column_type,
+                       num_queries=users_col_num_queries, num_queries_type=users_col_num_type,
+                       num_results=users_col_num_results, num_results_type=users_col_num_type)
         LOG.debug("Running query: %s", users_sql_create_table)
         self.cursor.execute(users_sql_create_table)
 
@@ -213,6 +266,31 @@ def map_to_sound(row):
     sound["text"] = row[2]
     sound["tags"] = row[3]
     return sound
+
+
+def map_to_users(result_set):
+    users = []
+    for row in result_set:
+        user = map_to_user(row)
+        users.append(user)
+    return users
+
+
+def map_to_user(row):
+    """
+       Mapper to User object
+    {
+        'id': 183712,
+        'is_bot': False,
+        'first_name': 'first name',
+        'username': 'username',
+        'last_name': None,
+        'language_code': 'en-US'
+    }
+    """
+    user = User(row[0], row[1], row[2],
+                last_name=row[3], username=row[4], language_code=row[5], num_queries=row[6], num_results=row[7])
+    return user
 
 
 def resolve_where_from_sound(sound):

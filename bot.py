@@ -85,6 +85,8 @@ bot = telebot.TeleBot(args.token)
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     LOG.debug(message)
+    from_user = message.from_user
+    database.add_or_update_user(from_user)
     cid = message.chat.id
     bot.send_message(cid,
                      "Este bot es inline. Teclea su nombre en una conversación/grupo y podras enviar un mensaje "
