@@ -17,7 +17,9 @@ TELEGRAM_INLINE_MAX_RESULTS = 48
 
 _ENV_TELEGRAM_BOT_TOKEN = "TELEGRAM_BOT_TOKEN"
 _ENV_TELEGRAM_USER_ALIAS = "TELEGRAM_USER_ALIAS"
-_ENV_DATABASE_SQLITE = 'DATABASE_SQLITE'
+_ENV_SQLITE_FILE = 'SQLITE_FILE'
+_ENV_MYSQL_HOST = 'MYSQL_HOST'
+_ENV_MYSQL_PORT = 'MYSQL_PORT'
 _ENV_DATA_JSON = 'DATA_JSON'
 _ENV_LOGGING_FILE = 'LOGFILE'
 
@@ -27,7 +29,9 @@ parser.add_argument("-v", "--verbosity", help="Defines log verbosity",
                     choices=['CRITICAL', 'ERROR', 'WARN', 'INFO', 'DEBUG'], default='INFO')
 parser.add_argument("-b", "--bucket", help="Bucket or url where audios are stored",
                     default='https://github.com/dmcelectrico/SoundsTable/raw/master/LaVidaModerna/')
-parser.add_argument("--database", help="Database file location", default='db.sqlite')
+parser.add_argument("--sqlite", help="SQLite file path", default='db.sqlite')
+parser.add_argument("--mysql-host", help="mysql host")
+parser.add_argument("--mysql-port", type=str, help="mysql port", default='3306')
 parser.add_argument("--token", type=str, help="Telegram API token given by @botfather.")
 parser.add_argument("--admin", type=str, help="Alias of the admin user.")
 parser.add_argument("--data", type=str, help="Data JSON path.", default='data.json')
@@ -67,7 +71,12 @@ except KeyError as key_error:
             _ENV_TELEGRAM_USER_ALIAS)
 
 try:
-    args.database = os.environ[_ENV_DATABASE_SQLITE]
+    args.mysql_host = os.environ[_ENV_MYSQL_HOST]
+except KeyError:
+    pass
+
+try:
+    args.mysql_port = os.environ[_ENV_MYSQL_PORT]
 except KeyError:
     pass
 
@@ -76,8 +85,19 @@ try:
 except KeyError:
     pass
 
+try:
+    args.sqlite = os.environ[_ENV_SQLITE_FILE]
+except KeyError:
+    pass
+
 LOG.info('Starting up bot...')
-database = persistence.SqLite(db_file=args.database)
+
+if args.mysql_host:
+    LOG.info('Using MySQL as persistence layer: host %s port %s', args.mysql_host, args.mysql_port)
+    # TODO: Pony migration
+else:
+    LOG.info('Using SQLite as persistence layer: %s', args.sqlite)
+    database = persistence.SqLite(db_file=args.sqlite)
 
 bot = telebot.TeleBot(args.token)
 
@@ -85,8 +105,6 @@ bot = telebot.TeleBot(args.token)
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
     LOG.debug(message)
-    from_user = message.from_user
-    database.add_or_update_user(from_user)
     cid = message.chat.id
     bot.send_message(cid,
                      "Este bot es inline. Teclea su nombre en una conversación/grupo y podras enviar un mensaje "
@@ -121,6 +139,7 @@ def query_text(inline_query):
         bot.answer_inline_query(inline_query.id, r, cache_time=5)
     except Exception as e:
         LOG.error("Query aborted" + e, e)
+
 
 
 def synchronize_sounds():
