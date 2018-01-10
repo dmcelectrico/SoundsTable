@@ -142,7 +142,7 @@ def synchronize_sounds():
 
     # Removing deleted sounds form db
     db_sounds = database.get_sounds()
-    for db_sound in db_sounds:
+    for db_sound in list(db_sounds):
         found = None
         for jsound in json_sounds:
             if jsound["filename"] == db_sound["filename"]:
@@ -150,18 +150,19 @@ def synchronize_sounds():
                 break
         if not found:
             database.delete_sound(db_sound)
+            db_sounds.remove(db_sound)
 
     return db_sounds
 
 
 sounds = synchronize_sounds()
+LOG.info('Serving %i sounds.', len(sounds))
 
 while True:
     try:
         sleep(1)
         LOG.debug("Polling started")
-        code = bot.polling()
-        LOG.debug(code)
+        bot.polling()
     except requests.exceptions.ConnectionError as connection_error:
         LOG.error("ConnectionError: Cannot connect to server.")
         LOG.debug(connection_error)
