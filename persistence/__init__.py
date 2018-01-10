@@ -1,6 +1,6 @@
 import logging
 import sqlite3
-from telebot.types import User # FIXME: Create custom User
+from pony.orm import *
 
 LOG = logging.getLogger('LaVidaModerna_Bot.persistence')
 
@@ -34,6 +34,26 @@ users_col_num_queries = 'num_queries'
 users_col_num_results = 'num_results'
 users_col_num_type = INTEGER
 
+db = Database()
+
+
+class Sound(db.Entity):
+    id = PrimaryKey(int)
+    filename = Required(str)
+    text = Required(str)
+    tags = Required(str)
+    uses = Required(int)
+
+
+class User(db.Entity):
+    id = PrimaryKey(int)
+    is_bot = Required(bool)
+    first_name = Required(str)
+    last_name = Optional(str)
+    username = Optional(str)
+    language_code = Optional(str)
+    num_queries = Required(int)
+    num_results = Required(int)
 
 class SqLite:
 
