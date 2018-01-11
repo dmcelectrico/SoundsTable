@@ -121,6 +121,11 @@ def query_text(inline_query):
         LOG.error("Query aborted" + e, e)
 
 
+@bot.chosen_inline_handler(func=lambda chosen_inline_result: True)
+def test_chosen(chosen_inline_result):
+    LOG.debug('Chosen result: %s', str(chosen_inline_result))
+
+
 def synchronize_sounds():
     db_sounds = database.get_sounds()
     LOG.debug("Sounds in db (%d)", len(db_sounds))
