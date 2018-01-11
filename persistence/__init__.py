@@ -55,18 +55,25 @@ class User(db.Entity):
     num_queries = Required(int)
     num_results = Required(int)
 
-class SqLite:
 
-    def __init__(self, db_file):
-        if not db_file:
-            db_file = 'db.sqlite'
-        LOG.debug('Persistence layer started: sqlite3')
-        self.sqlite_file = db_file  # name of the sqlite database file
+class Database:
 
-        # Connecting to the database file
-        self.connection = sqlite3.connect(self.sqlite_file)
-        self.cursor = self.connection.cursor()
-        self.startup()
+    def __init__(self, provider, filename=None, host=None, user=None, password=None, database_name=None, ):
+        if provider == 'mysql':
+            LOG.info('Starting persistence layer using MySQL on %s db: %s', host, database_name)
+            LOG.debug('MySQL data: host --> %s, user --> %s, db --> %s, password empty --> %s',
+                      host, user, database_name, str(password is None))
+            db.bind(provider='mysql', host=host, user=user, passwd=password, db=database_name)
+        elif provider == 'postgres':
+            LOG.info('Starting persistence layer using PostgreSQL on %s db: %s', host, database_name)
+            LOG.debug('PostgreSQL data: host --> %s, user --> %s, db --> %s, password empty --> %s',
+                      host, user, database_name, str(password is None))
+            db.bind(provider='postgres', host=host, user=user, password=password, database=database_name)
+        else:
+            LOG.info('Starting persistence layer using SQLite on %s', filename)
+            db.bind(provider='sqlite', filename=filename if not None else ':memory:')
+
+        db.generate_mapping(create_tables=True)
 
     def startup(self):
         tables = self.get_tables()

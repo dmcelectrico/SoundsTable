@@ -141,7 +141,6 @@ def query_text(inline_query):
         LOG.error("Query aborted" + e, e)
 
 
-
 def synchronize_sounds():
     db_sounds = database.get_sounds()
     LOG.debug("Sounds in db (%d)", len(db_sounds))
