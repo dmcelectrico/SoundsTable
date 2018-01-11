@@ -8,7 +8,7 @@ import json
 import unidecode
 import random
 from time import sleep
-import persistence
+from persistence import *
 import os
 
 LOG = logger.get_logger('LaVidaModerna_Bot')
@@ -29,7 +29,7 @@ parser.add_argument("-v", "--verbosity", help="Defines log verbosity",
                     choices=['CRITICAL', 'ERROR', 'WARN', 'INFO', 'DEBUG'], default='INFO')
 parser.add_argument("-b", "--bucket", help="Bucket or url where audios are stored",
                     default='https://github.com/dmcelectrico/SoundsTable/raw/master/LaVidaModerna/')
-parser.add_argument("--sqlite", help="SQLite file path", default='db.sqlite')
+parser.add_argument("--sqlite", help="SQLite file path")
 parser.add_argument("--mysql-host", help="mysql host")
 parser.add_argument("--mysql-port", type=str, help="mysql port", default='3306')
 parser.add_argument("--token", type=str, help="Telegram API token given by @botfather.")
@@ -97,7 +97,7 @@ if args.mysql_host:
     # TODO: Pony migration
 else:
     LOG.info('Using SQLite as persistence layer: %s', args.sqlite)
-    database = persistence.SqLite(db_file=args.sqlite)
+    database = Database('sqlite', filename=args.sqlite)
 
 bot = telebot.TeleBot(args.token)
 
@@ -159,15 +159,13 @@ def synchronize_sounds():
     # Adding new sounds to db
     for jsound in json_sounds:
         query = database.get_sound(filename=jsound["filename"])
-        if len(query) == 0:
+        if not query:
             jsound["id"] = ''.join(random.choices(string.digits, k=8))
             database.add_sound(jsound["id"], jsound["filename"], jsound["text"], jsound["tags"])
-        if len(query) > 1:
-            LOG.warn("Possible duplicate: %s", str(query))
 
     # Removing deleted sounds form db
     db_sounds = database.get_sounds()
-    for db_sound in list(db_sounds):
+    for db_sound in db_sounds:
         found = None
         for jsound in json_sounds:
             if jsound["filename"] == db_sound["filename"]:
