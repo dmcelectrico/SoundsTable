@@ -1,4 +1,5 @@
 import logging
+import datetime
 from pony.orm import *
 
 LOG = logging.getLogger('LaVidaModerna_Bot.persistence')
@@ -23,18 +24,21 @@ class User(db.Entity):
     language_code = Optional(str)
     queries = Set('QueryHistory')
     results = Set('ResultHistory')
+    first_seen = Required(datetime.datetime, sql_default='CURRENT_TIMESTAMP')
 
 
 class QueryHistory(db.Entity):
     id = PrimaryKey(int, auto=True)
     user = Required(User)
     text = Optional(str)
+    timestamp = Required(datetime.datetime, sql_default='CURRENT_TIMESTAMP')
 
 
 class ResultHistory(db.Entity):
     id = PrimaryKey(int, auto=True)
     user = Required(User)
     sound = Required(Sound)
+    timestamp = Required(datetime.datetime, sql_default='CURRENT_TIMESTAMP')
 
 
 class Database:
@@ -152,5 +156,4 @@ class Database:
         db_user = self.get_user(from_user.id)
         if not db_user:
             db_user = self.add_or_update_user(from_user)
-        sound = self.get_sound(id=result.result_id)
-        ResultHistory(user=User[db_user['id']], sound=sound)
+        ResultHistory(user=User[db_user['id']], sound=Sound[result.result_id])

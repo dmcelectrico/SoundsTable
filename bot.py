@@ -141,7 +141,7 @@ def query_text(inline_query):
         bot.answer_inline_query(inline_query.id, r, cache_time=5)
         on_query(inline_query)
     except Exception as e:
-        LOG.error("Query aborted" + e, e)
+        LOG.error("Query aborted" + str(e), e)
 
 
 @bot.chosen_inline_handler(func=lambda chosen_inline_result: True)
@@ -185,10 +185,8 @@ def synchronize_sounds():
 def on_query(query):
     try:
         database.add_user_query(query)
-    except
-
-
-
+    except Exception as e:
+        LOG.error("Couldn't save query" + str(e), e)
 
 
 sounds = synchronize_sounds()
