@@ -121,7 +121,8 @@ def query_empty(inline_query):
             sound["id"], BUCKET + sound["filename"], sound["text"], caption=sound["text"]))
         if len(r) > TELEGRAM_INLINE_MAX_RESULTS:  # https://core.telegram.org/bots/api#answerinlinequery
             break
-    bot.answer_inline_query(inline_query.id, r)
+    bot.answer_inline_query(inline_query.id, r, cache_time=5)
+    on_query(inline_query)
 
 
 @bot.inline_handler(lambda query: query.query)
@@ -138,13 +139,15 @@ def query_text(inline_query):
             if len(r) > TELEGRAM_INLINE_MAX_RESULTS:
                 break
         bot.answer_inline_query(inline_query.id, r, cache_time=5)
+        on_query(inline_query)
     except Exception as e:
         LOG.error("Query aborted" + e, e)
 
 
 @bot.chosen_inline_handler(func=lambda chosen_inline_result: True)
-def test_chosen(chosen_inline_result):
+def on_result(chosen_inline_result):
     LOG.debug('Chosen result: %s', str(chosen_inline_result))
+    database.add_user_result(chosen_inline_result)
 
 
 def synchronize_sounds():
@@ -177,6 +180,15 @@ def synchronize_sounds():
             db_sounds.remove(db_sound)
 
     return db_sounds
+
+
+def on_query(query):
+    try:
+        database.add_user_query(query)
+    except
+
+
+
 
 
 sounds = synchronize_sounds()
