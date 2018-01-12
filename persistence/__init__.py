@@ -10,7 +10,8 @@ class Sound(db.Entity):
     filename = Required(str, index=True, unique=True)
     text = Required(str)
     tags = Required(str)
-    uses = Required(int)
+    uses = Set('ResultHistory')
+    disabled = Required(bool)
 
 
 class User(db.Entity):
@@ -20,8 +21,20 @@ class User(db.Entity):
     last_name = Optional(str)
     username = Optional(str)
     language_code = Optional(str)
-    num_queries = Required(int)
-    num_results = Required(int)
+    queries = Set('QueryHistory')
+    results = Set('ResultHistory')
+
+
+class QueryHistory(db.Entity):
+    id = PrimaryKey(int, auto=True)
+    uid = Required(User)
+    text = Required(str)
+
+
+class ResultHistory(db.Entity):
+    id = PrimaryKey(int, auto=True)
+    uid = Required(User)
+    sid = Required(Sound)
 
 
 class Database:
@@ -47,37 +60,45 @@ class Database:
         db.generate_mapping(create_tables=True)
 
     @db_session
-    def get_sounds(self):
-        query = Sound.select()
-        sounds = [{'id': sound.id, 'filename': sound.filename, 'text': sound.text, 'tags': sound.tags,
-                   'uses': sound.uses} for sound in query]
+    def get_sounds(self, include_disabled=False):
+        query = Sound.select(lambda s: s.disabled is include_disabled)
+        sounds = [{'id': db_object.id, 'filename': db_object.filename, 'text': db_object.text, 'tags': db_object.tags}
+                  for db_object in query]
         LOG.debug("get_sounds: Obtained: %s", str(sounds))
         return sounds
 
     @db_session
     def get_sound(self, id=None, filename=None):
         if not id:
-            sound = Sound.get(filename=filename)
+            db_object = Sound.get(filename=filename)
+        elif not filename:
+            db_object = Sound.get(id=id)
         else:
-            sound = Sound.get(id=id, filename=filename)
-        return sound
+            db_object = Sound.get(id=id, filename=filename)
+
+        if db_object:
+            return {'id': db_object.id, 'filename': db_object.filename, 'text': db_object.text, 'tags': db_object.tags}
 
     @db_session
     def add_sound(self, id, filename, text, tags):
         LOG.info('Adding sound: %s %s', id, filename)
-        Sound(id=id, filename=filename, text=text, tags=tags, uses=0)
+        Sound(id=id, filename=filename, text=text, tags=tags, disabled=False)
         commit()
 
     @db_session
     def delete_sound(self, sound):
         LOG.info('Deleting sound %s', str(sound))
-        Sound.get(filename=sound['filename']).delete()
+        sound = Sound.get(filename=sound['filename'])
+        if len(sound.uses) > 0:
+            sound.delete()
+        else:
+            sound.disabled = True
 
     def add_or_update_user(self, user):
         pass
 
     def get_user(self, id=None, username=None):
-       pass
+        pass
 
     def add_user_query(self):
         pass
