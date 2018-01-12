@@ -109,6 +109,7 @@ def send_welcome(message):
     bot.send_message(cid,
                      "Este bot es inline. Teclea su nombre en una conversación/grupo y podras enviar un mensaje "
                      "moderno.")
+    database.add_or_update_user(message.from_user)
 
 
 @bot.inline_handler(lambda query: query.query == '')

@@ -56,7 +56,6 @@ class Database:
         else:
             LOG.info('Starting persistence layer on memory using SQLite.')
             db.bind(provider='sqlite', filename=':memory:')
-
         db.generate_mapping(create_tables=True)
 
     @db_session
@@ -94,11 +93,46 @@ class Database:
         else:
             sound.disabled = True
 
+    @db_session
     def add_or_update_user(self, user):
-        pass
+        if not isinstance(user, dict):
+            user = vars(user)
+            LOG.debug('Translated type: %s', str(user))
+        db_user = self.get_user(id=user['id'])
+        if db_user is not None and user != db_user:
+            LOG.info('Updating user: %s', str(db_user))
+            updated_user = User[user['id']]
+            updated_user.id=user['id']
+            updated_user.is_bot=user['is_bot']
+            updated_user.first_name=user['first_name']
+            updated_user.last_name=(user['last_name'] if user['last_name'] is not None else '')
+            updated_user.username=(user['username'] if user['username'] is not None else '')
+            updated_user.language_code=(user['language_code'] if user['language_code'] is not None else '')
+        elif db_user is None:
+            LOG.info('Adding user: %s', str(user))
+            User(id=user['id'], is_bot=user['is_bot'], first_name=user['first_name'],
+                 last_name=(user['last_name'] if user['last_name'] is not None else ''),
+                 username=(user['username'] if user['username'] is not None else ''),
+                 language_code=(user['language_code'] if user['language_code'] is not None else ''))
+        else:
+            LOG.debug('User %s already in database.', user['id'])
+            return
+        commit()
 
+    @db_session
     def get_user(self, id=None, username=None):
-        pass
+        if not id:
+            db_object = User.get(username=username)
+        elif not username:
+            db_object = User.get(id=id)
+        else:
+            db_object = User.get(id=id, username=username)
+
+        if db_object:
+            return {'id': db_object.id, 'is_bot': db_object.is_bot, 'first_name': db_object.first_name,
+                    'username': (db_object.username if db_object.username is not '' else None),
+                    'last_name': (db_object.last_name if db_object.last_name is not '' else None),
+                    'language_code': (db_object.language_code if db_object.language_code is not '' else None)}
 
     def add_user_query(self):
         pass
