@@ -66,7 +66,7 @@ class Database:
     @db_session
     def get_sounds(self, include_disabled=False):
         query = Sound.select(lambda s: s.disabled is include_disabled)
-        sounds = [{'id': db_object.id, 'filename': db_object.filename, 'text': db_object.text, 'tags': db_object.tags}
+        sounds = [object_to_sound(db_object)
                   for db_object in query]
         LOG.debug("get_sounds: Obtained: %s", str(sounds))
         return sounds
@@ -81,7 +81,7 @@ class Database:
             db_object = Sound.get(id=id, filename=filename)
 
         if db_object:
-            return {'id': db_object.id, 'filename': db_object.filename, 'text': db_object.text, 'tags': db_object.tags}
+            return object_to_sound(db_object)
 
     @db_session
     def add_sound(self, id, filename, text, tags):
@@ -126,6 +126,13 @@ class Database:
         return self.get_user(user['id'])
 
     @db_session
+    def get_users(self):
+        query = User.select()
+        users = [object_to_user(db_object) for db_object in query]
+        LOG.debug("get_users: Obtained: %s", str(users))
+        return users
+
+    @db_session
     def get_user(self, id=None, username=None):
         if not id:
             db_object = User.get(username=username)
@@ -135,13 +142,10 @@ class Database:
             db_object = User.get(id=id, username=username)
 
         if db_object:
-            return {'id': db_object.id, 'is_bot': db_object.is_bot, 'first_name': db_object.first_name,
-                    'username': (db_object.username if db_object.username is not '' else None),
-                    'last_name': (db_object.last_name if db_object.last_name is not '' else None),
-                    'language_code': (db_object.language_code if db_object.language_code is not '' else None)}
+            return object_to_user(db_object)
 
     @db_session
-    def add_user_query(self, query):
+    def add_query(self, query):
         LOG.info("Adding query: %s", str(query))
         from_user = query.from_user
         db_user = self.get_user(from_user.id)
@@ -150,10 +154,48 @@ class Database:
         QueryHistory(user=User[db_user['id']], text=query.query)
 
     @db_session
-    def add_user_result(self, result):
+    def get_queries(self):
+        query = QueryHistory.select()
+        queries = [object_to_query(db_object) for db_object in query]
+        LOG.debug("get_queries: Obtained: %s", str(queries))
+        return queries
+
+    @db_session
+    def add_result(self, result):
         LOG.info("Adding result: %s", str(result))
         from_user = result.from_user
         db_user = self.get_user(from_user.id)
         if not db_user:
             db_user = self.add_or_update_user(from_user)
         ResultHistory(user=User[db_user['id']], sound=Sound[result.result_id])
+
+    @db_session
+    def get_results(self):
+        query = ResultHistory.select()
+        results = [object_to_result(db_object) for db_object in query]
+        LOG.debug("get_results: Obtained: %s", str(results))
+        return results
+
+
+# MAPPERS
+
+
+def object_to_sound(db_object):
+    return {'id': db_object.id, 'filename': db_object.filename, 'text': db_object.text, 'tags': db_object.tags}
+
+
+def object_to_user(db_object):
+    return {'id': db_object.id, 'is_bot': db_object.is_bot, 'first_name': db_object.first_name,
+            'username': (db_object.username if db_object.username is not '' else None),
+            'last_name': (db_object.last_name if db_object.last_name is not '' else None),
+            'language_code': (db_object.language_code if db_object.language_code is not '' else None)}
+
+
+def object_to_query(db_object):
+    return {'id': db_object.id, 'user': object_to_user(db_object.user), 'text': db_object.text,
+            'timestamp': db_object.timestamp}
+
+
+def object_to_result(db_object):
+    return {'id': db_object.id, 'user': object_to_user(db_object.user), 'sound': object_to_sound(db_object.sound),
+            'timestamp': db_object.timestamp}

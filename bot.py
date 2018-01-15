@@ -147,7 +147,17 @@ def query_text(inline_query):
 @bot.chosen_inline_handler(func=lambda chosen_inline_result: True)
 def on_result(chosen_inline_result):
     LOG.debug('Chosen result: %s', str(chosen_inline_result))
-    database.add_user_result(chosen_inline_result)
+    try:
+        database.add_result(chosen_inline_result)
+    except Exception as e:
+        LOG.error("Couldn't save result" + str(e), e)
+
+
+def on_query(query):
+    try:
+        database.add_query(query)
+    except Exception as e:
+        LOG.error("Couldn't save query" + str(e), e)
 
 
 def synchronize_sounds():
@@ -182,11 +192,26 @@ def synchronize_sounds():
     return db_sounds
 
 
-def on_query(query):
-    try:
-        database.add_user_query(query)
-    except Exception as e:
-        LOG.error("Couldn't save query" + str(e), e)
+# ADMIN COMMANDS
+
+def message_is_from_admin(message):
+    from_user = message.from_user
+    return from_user.username == args.admin
+
+
+@bot.message_handler(commands=['stats'], func=lambda message: message_is_from_admin(message))
+def send_stats(message):
+    LOG.debug(message)
+    cid = message.chat.id
+    users = database.get_users()
+    queries = database.get_queries()
+    results = database.get_results()
+    bot.send_message(cid,
+                     '👥 Users: {num_users}\n'
+                     '🔎 Queries: {num_queries}\n'
+                     '🔊 Results: {num_results}'.format(num_users=len(users),
+                                                       num_queries=len(queries),
+                                                       num_results=len(results)))
 
 
 sounds = synchronize_sounds()
