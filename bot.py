@@ -10,6 +10,7 @@ import random
 from time import sleep
 from persistence import *
 import os
+import PrettyUptime
 
 LOG = logger.get_logger('LaVidaModerna_Bot')
 REMOVE_CHARS = string.punctuation + string.whitespace
@@ -203,15 +204,32 @@ def message_is_from_admin(message):
 def send_stats(message):
     LOG.debug(message)
     cid = message.chat.id
+    uptime = PrettyUptime.get_pretty_python_uptime(custom_name='Bot')
     users = database.get_users()
     queries = database.get_queries()
     results = database.get_results()
     bot.send_message(cid,
+                     '🤖 {uptime}\n'
+                     '*All time stats:*\n'
                      '👥 Users: {num_users}\n'
                      '🔎 Queries: {num_queries}\n'
-                     '🔊 Results: {num_results}'.format(num_users=len(users),
-                                                       num_queries=len(queries),
-                                                       num_results=len(results)))
+                     '🔊 Results: {num_results}\n'.format(num_users=len(users),
+                                                         num_queries=len(queries),
+                                                         num_results=len(results),
+                                                         uptime=uptime), parse_mode='Markdown')
+
+
+@bot.message_handler(commands=['uptime'], func=lambda message: message_is_from_admin(message))
+def send_uptime(message):
+    LOG.debug(message)
+    cid = message.chat.id
+    py_uptime = PrettyUptime.get_pretty_python_uptime(custom_name='Bot')
+    machine_uptime = PrettyUptime.get_pretty_machine_uptime_string()
+    machine_info = PrettyUptime.get_pretty_machine_info()
+    bot.send_message(cid,
+                     '💻 {machine_info}\n'
+                     '⌛ {machine_uptime}\n'
+                     '🤖 {py_uptime}\n'.format(machine_info=machine_info, machine_uptime=machine_uptime, py_uptime=py_uptime))
 
 
 sounds = synchronize_sounds()
