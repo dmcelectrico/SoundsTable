@@ -1,5 +1,5 @@
 import unittest
-from persistence import *
+from app.persistence import *
 
 
 class PersistenceTest(unittest.TestCase):
