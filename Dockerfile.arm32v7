@@ -11,4 +11,4 @@ ENV DATA_JSON=/app/data.json
 
 ADD app /app
 
-ENTRYPOINT ["python3", "/bot.py"]
+ENTRYPOINT ["python3", "bot.py"]
