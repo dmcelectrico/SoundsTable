@@ -9,6 +9,7 @@ VOLUME /data
 ENV SQLITE_FILE=/data/db.sqlite
 ENV DATA_JSON=/app/data.json
 
+COPY PrettyUptime.py /app
 COPY logger.py /app
 COPY persistence /app/persistence
 COPY bot.py /app
