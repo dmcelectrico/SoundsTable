@@ -9,6 +9,7 @@ import unidecode
 import random
 from time import sleep
 from persistence import *
+from persistence import tools
 import os
 import PrettyUptime
 
@@ -117,12 +118,18 @@ def send_welcome(message):
 def query_empty(inline_query):
     LOG.debug(inline_query)
     r = []
+    recently_used_sounds = tools.get_latest_used_sounds_from_user(inline_query.from_user.id)
+    for sound in recently_used_sounds:
+        r.append(types.InlineQueryResultVoice(
+            sound["id"], BUCKET + sound["filename"], '🕚 '+sound["text"], caption=sound["text"]))
     for sound in sounds:
+        if sound in recently_used_sounds:
+            continue
         r.append(types.InlineQueryResultVoice(
             sound["id"], BUCKET + sound["filename"], sound["text"], caption=sound["text"]))
         if len(r) > TELEGRAM_INLINE_MAX_RESULTS:  # https://core.telegram.org/bots/api#answerinlinequery
             break
-    bot.answer_inline_query(inline_query.id, r, cache_time=5)
+    bot.answer_inline_query(inline_query.id, r, is_personal=True, cache_time=5)
     on_query(inline_query)
 
 
@@ -229,7 +236,8 @@ def send_uptime(message):
     bot.send_message(cid,
                      '💻 {machine_info}\n'
                      '⌛ {machine_uptime}\n'
-                     '🤖 {py_uptime}\n'.format(machine_info=machine_info, machine_uptime=machine_uptime, py_uptime=py_uptime))
+                     '🤖 {py_uptime}\n'
+                     .format(machine_info=machine_info, machine_uptime=machine_uptime, py_uptime=py_uptime))
 
 
 sounds = synchronize_sounds()
