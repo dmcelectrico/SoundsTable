@@ -330,6 +330,16 @@
       "filename": "elvis-canario3.ogg",
       "text": "Mi nombre es Elvis Canario...",
       "tags": "elvis canario y la casualidad soy el ignatius farray"
+    },
+    {
+      "filename": "elmercadoamigo.ogg",
+      "text": "Es el mercado, amigo",
+      "tags": "es el mercado amigo rodrigo rato ignatius farray"
+    },
+    {
+      "filename": "elmercadoninio.ogg",
+      "text": "Es el mercado, NIÑO",
+      "tags": "es el mercado nino rodrigo rato ignatius farray"
     }
   ]
 }
