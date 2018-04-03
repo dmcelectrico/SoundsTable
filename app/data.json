@@ -383,7 +383,7 @@
     },
     {
       "filename": "vetealamierdahombre.ogg",
-      "text": "Vete a la mierda, hombre",
+      "text": "Vete a la mierda, hombre...",
       "tags": "vete a la mierda hombre rafael alonso"
     },
     {
@@ -410,10 +410,21 @@
       "filename": "lodelfeminismo.ogg",
       "text": "Lo del feminismo",
       "tags": "lo del feminismo julio"
-    },{
+    },
+    {
       "filename": "moviendopapeles.ogg",
       "text": "Moviendo papeles",
       "tags": "moviendo papeles julio"
+    },
+    {
+      "filename": "spontiak-julio.ogg",
+      "text": "ESPONTIAK",
+      "tags": "spontiak espontiak julio"
+    },
+    {
+      "filename": "vetealamierdahombre-julio.ogg",
+      "text": "Vete a la mierda, hombre.",
+      "tags": "vete a la mierda hombre julio"
     }
   ]
 }
