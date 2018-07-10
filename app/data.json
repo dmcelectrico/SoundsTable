@@ -477,9 +477,14 @@
       "tags": "putos yayos julio"
     },
     {
-      "filename": "delicious.ogg",
+      "filename": "delicious2.ogg",
       "text": "Delicious",
       "tags": "delicious candy crush"
+    },
+    {
+      "filename": "operabufa.ogg",
+      "text": "Opera bufa",
+      "tags": "opera bufa doctor cavadas dr"
     }
   ]
 }
