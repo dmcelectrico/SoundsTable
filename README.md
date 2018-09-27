@@ -7,3 +7,8 @@ All audios must be encoded using ffmpeg with these parameters:
 ```
 ffmpeg -i $INPUT -map_metadata -1 -ac 1 -map 0:a -codec:a libopus -b:a 128k -vbr off -ar 48000 $OUTPUT
 ```
+
+Audacity external program command:
+```
+ffmpeg -i pipe:0 -map_metadata -1 -ac 1 -map 0:a -codec:a libopus -b:a 128k -vbr off -ar 48000 "%f"
+```
