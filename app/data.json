@@ -2,6 +2,11 @@
   "title": "La Vida Moderna",
   "sounds": [
     {
+      "filename": "lapromosio.ogg",
+      "text": "La Promosió",
+      "tags": "la promosió"
+    },
+    {
       "filename": "elRancius.ogg",
       "text": "El Rancius",
       "tags": "el rancius queque"
