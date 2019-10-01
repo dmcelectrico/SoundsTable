@@ -1,3 +1,7 @@
+"""
+This file handles a Telegram inline bot that sends voice messages from La Vida Moderna (radio program from La Ser)
+"""
+
 import telebot
 import requests
 import string
